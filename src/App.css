@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL VARIABLES START */
+button {
+  display: flex;
+  padding: 0.5rem 3rem;
+  font-size: 1.1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* GLOBAL VARIABLES END */
+
+
+/* GLOBAL CSS START*/
+
+/* GLOBAL CSS END*/
+
+
+/* Navbar Css Starts*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem;
+  align-items: center;
+}
+
+nav .navbar-links {
+  display: flex;
+  gap: 3rem;
+  font-size: 1.2rem;
+  align-items: center;
+} 
+
+nav .navbar-links li{
+  list-style: none;
+  text-decoration: none;
+}
+
+nav .navbar-links button{
+  text-transform: uppercase;
+}
+/* Navbar Css Ends*/
+
+/* Header Section Css Starts */
+
+.home-header-section {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 500px;
+  position: relative;
+}
+
+.home-header-section h1 {
+  padding-left: 3rem;
+}
+
+.home-header-core-values-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  grid-auto-rows: auto; 
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -8rem;
+  padding: 3rem;
+  place-items: center;
+}
+
+.home-header-core-value {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 1rem;
+  gap: 1rem;
+  text-transform: uppercase;
+  border-radius: 3px;
+  align-self: center;
+
+}
+
+.core-value-icon {
+  font-size: 2.5rem;
+  height: 50%;
+}
+/* Header Section Css Ends */
+
+/* Footer Css Starts*/
+footer {
+  display: flex;
+  padding: 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  
+  
+}
+
+footer .footer-contact {
+  text-align: right;
+}
+
+/* Footer Css Ends*/
