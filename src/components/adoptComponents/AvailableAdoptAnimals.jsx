@@ -2,7 +2,7 @@ import React from 'react'
 
 const AvailableAdoptAnimals = () => {
   return (
-    <div>
+    <div className='adopt-adopt-section subnav-section-container'>
       adopt
     </div>
   )

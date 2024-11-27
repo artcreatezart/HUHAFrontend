@@ -1,5 +1,5 @@
-import React from 'react'
 import Seo from '../components/Seo'
+import PageHeader from '../components/PageHeader'
 
 const Cart = () => {
   return (
@@ -9,7 +9,10 @@ const Cart = () => {
         description='Purchase items in your cart or continue shpopping!'
         url={window.location.href}
       />
-      CART
+      <PageHeader/>
+      <div className='cart-container subnav-section-container'>
+        Cart
+      </div>
     </>
     
   )
