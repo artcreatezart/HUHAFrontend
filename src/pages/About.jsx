@@ -8,10 +8,11 @@ import WhatWeDo from '../components/aboutComponents/WhatWeDo';
 import CurrentCampaign from '../components/aboutComponents/CurrentCampaign';
 import History from '../components/aboutComponents/History';
 import Trustees from '../components/aboutComponents/Trustees';
-import Sponsors from '../components/aboutComponents/Sponsors';
+import AboutSponsors from '../components/aboutComponents/AboutSponsors';
+import Seo from '../components/Seo';
 
 const About = () => {
-  const [shownComponent, setShownComponent] = useState('');
+  const [shownComponent, setShownComponent] = useState('Our Purpose');
 
   const displayComponent = () => {
     switch (shownComponent) {
@@ -26,7 +27,7 @@ const About = () => {
       case 'Trustees':
         return <Trustees />;
       case 'Sponsors':
-        return <Sponsors />;
+        return <AboutSponsors />;
       default:
         return <OurPurpose />;
     }
@@ -34,6 +35,11 @@ const About = () => {
 
   return (
     <>
+      <Seo
+        title={`${shownComponent} - About - HUHA Summative`}
+        description='Get to know about HUHA!'
+        url={window.location.href}
+      />
       <PageHeader/>
       <AboutSubNav setShownComponent={setShownComponent} />
       <div className='content-container'>{displayComponent()}</div>

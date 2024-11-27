@@ -1,10 +1,10 @@
-import React from 'react'
+import Campaign from "../Campaign"
 
 const CurrentCampaign = () => {
   return (
-    <div>
-      camapign
-    </div>
+    <>
+      <Campaign/>
+    </>
   )
 }
 

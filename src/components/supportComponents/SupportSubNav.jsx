@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 
 const SupportSubNav = ({setShownComponent}) => {
-
   return (
     <>
       <div className='subnav-container'>

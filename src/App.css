@@ -186,24 +186,24 @@ nav .navbar-links button{
   background-size: cover;
 }
 
-/* Advice section */
-.home-advice-section {
+/* FOUR CARD sections includes Advice and main features before and after campaign */
+.four-card-sections {
   display: flex;
   flex-direction: column;
   gap: 1.3rem;
   padding: 0 3rem;
 }
 
-.home-advice-card-container {
+.four-column-grid-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-  grid-auto-rows: auto; 
-  gap: 5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5rem;
+  grid-row-gap: 5rem;
   place-items: center;
 }
 
-.advice-card {
+.home-card {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -213,7 +213,11 @@ nav .navbar-links button{
   padding: 1rem;
 }
 
-.advice-card-img {
+.home-card a button {
+  width: 100%;
+}
+
+.home-card-img {
   width: 100%;
   height: 150px;
   background-position: center;
@@ -221,23 +225,38 @@ nav .navbar-links button{
   border-radius: 3px;
 }
 
-.advice-card:nth-child(1) .advice-card-img {
+.home-advice-card:nth-child(1) .home-card-img {
   background-image: url(/other-imgs/home-imgs/injuredanimal-img.webp);
 }
 
-.advice-card:nth-child(2) .advice-card-img {
+.home-advice-card:nth-child(2) .home-card-img {
   background-image: url(/other-imgs/home-imgs/home-rehome-img.webp);
 }
 
-.advice-card:nth-child(3) .advice-card-img {
+.home-advice-card:nth-child(3) .home-card-img {
   background-image: url(/other-imgs/home-imgs/lostanimal-img.webp);
 }
 
-.advice-card:nth-child(4) .advice-card-img {
+.home-advice-card:nth-child(4) .home-card-img {
   background-image: url(/other-imgs/home-imgs/abused-img.webp);
 }
 
-/* HOME Css Ends */
+.home-main-features-card:nth-child(1) .home-card-img {
+  background-image: url(/header-bg-imgs/adopt-imgs.webp)
+}
+
+.home-main-features-card:nth-child(2) .home-card-img {
+  background-image: url(/header-bg-imgs/donation-img.webp);
+}
+
+.home-main-features-card:nth-child(3) .home-card-img {
+  background-image: url(/header-bg-imgs/support-volunteer-img.webp);
+}
+
+.home-main-features-card:nth-child(4) .home-card-img {
+  background-image: url(/header-bg-imgs/adopt-img.webp);
+}
+/* FOUR CARD sections includes Advice and main features before and after campaign   ENDS*/
 
 /* Campaign Component Css Starts */
 .campaign-section {
@@ -266,6 +285,187 @@ nav .navbar-links button{
 }
 
 
+/* Sponsors CSs Section */
+.home-sponsor-container {
+  width: 100%;
+  padding: 0 3rem;
+  align-items: center;
+}
+
+.sponsor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sponsor-boxes-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  place-items: center;
+  text-align: center;
+}
+
+.sponsor-boxes-container img{
+  width: 200px;
+  object-fit: contain;
+  object-position: center;
+
+}
+
+/* HOME Css Ends */
+
+/* About Page Css Starts */
+.subnav-section-container{
+  padding: 0 3rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+/* Our purpose section */
+.purpose-about-container {
+  display: flex;
+  gap: 5rem;
+}
+
+.purpose-img-left-container{
+  background-image: url(/other-imgs/about-purpose-img.webp);
+  width: 50%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.purpose-text-right-container{
+  width: 50%;
+}
+
+/* What we do Section */
+.what-about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.what-single-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+
+}
+
+.what-single-card button{
+  margin-top: auto; 
+}
+
+/* history section */
+.history-about-section {
+  display: flex;
+  gap: 5rem;
+}
+
+.left-descript-history-container {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.right-points-history-container {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 3rem;
+  grid-row-gap: 1.3rem;
+  align-items: flex-start;
+  place-items: left;
+}
+
+.single-point-history {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start; 
+  gap: 1rem;
+}
+
+.paw-point-icon {
+  width: 50px;
+}
+
+/* Trustee section */
+.trustee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.trustee-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 3px;
+  background-color: aqua;
+}
+
+.trustee-img {
+  max-height: 250px; 
+  overflow: hidden; 
+  border-radius: 3px;
+}
+
+.trustee-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+}
+
+/* Our IMpact page css */
+.impact-about-container {
+  display: flex;
+  width: 100%;
+  gap: 5rem;
+}
+
+.impact-img-left-container {
+  width: 50%;
+  background-image: url(/other-imgs/home-imgs/info-header-img.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.impact-text-right-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Diasaster Response section */
+/* welfare reform section */
+/* animal rescue section */
+/* animal exploitation section */
+/* education section */
+
+/* Support Page Css */
+/* Volunteering sectionå */
+/* Fundraise sectionå */
+/* Support sectionå */
+/* Help sectionå */
+.top-support-card {
+  width: 100%;
+}
+
+.top-support-card button {
+  width: 100%;
+}
 /* Footer Css Starts*/
 footer {
   display: flex;

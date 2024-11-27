@@ -1,11 +1,11 @@
 import React from 'react'
-import { FaDonate, FaPaw } from "react-icons/fa";
+import { FaDonate, FaPaw } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
   return (
-    // Navbar Content Starts
+    // Navbar Content Starts f
     <header>
         <nav className='navbar customize-section-color'>
             <NavLink to='/' className='logo'>

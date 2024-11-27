@@ -1,10 +1,17 @@
 import React from 'react'
+import Seo from '../components/Seo'
 
 const Cart = () => {
   return (
-    <div>
-      Caart
-    </div>
+    <>
+      <Seo
+        title='Cart - HUHA Summative'
+        description='Purchase items in your cart or continue shpopping!'
+        url={window.location.href}
+      />
+      CART
+    </>
+    
   )
 }
 
