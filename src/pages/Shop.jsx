@@ -9,7 +9,7 @@ const Shop = () => {
         description='Look at our selection of products we provide.'
         url={window.location.href}
       />
-      <PageHeader/>
+      <PageHeader title='Shop' image_url='/header-bg-imgs/shop-cart-img.webp'/>
       <div className='shop-container subnav-section-container'>
         <div className='four-column-grid-container'>
         <div className='shop-info-container'>

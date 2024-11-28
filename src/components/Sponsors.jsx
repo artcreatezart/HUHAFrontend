@@ -27,7 +27,7 @@ const Sponsors = ({ sponsors = [] }) => {
 
     return (
         <div  className='sponsor-container'>
-            <h1>Sponsors</h1>
+            <h2>Sponsors</h2>
             <h3>Thank you to our supporters</h3>
             <div className='sponsor-boxes-container'>
                 {mappedSponsors}

@@ -1,7 +1,7 @@
-import React from 'react'
-
+// Fees component found in adopt page and fee section
 const Fees = () => {
   return (
+    // Parent Container
     <div className='fees-adopt-section subnav-section-container'>
       <h2>Adoption Fees</h2>
       <div className='fees-adopt-container'>

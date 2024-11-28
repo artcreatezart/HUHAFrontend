@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 const Fundraise = () => {
   return (
@@ -20,7 +20,7 @@ const Fundraise = () => {
         
         <p>If you are keen to get involved please contact us. We can let you know if there's a specific project or part of HUHA that we'd love you to raise funds for.</p>
         <Link to='/contact'>
-          <button>Contact Now</button>
+          <button className='primary-button'>Contact Now</button>
         </Link>
       </div>
 

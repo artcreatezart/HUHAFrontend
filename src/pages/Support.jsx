@@ -46,7 +46,7 @@ const Support = () => {
         description='See how you can Support HUHA and the animals'
         url={window.location.href}
       />
-      <PageHeader/>
+      <PageHeader title='Support' image_url='/header-bg-imgs/support-img.webp'/>
       <SupportSubNav setShownComponent={setShownComponent} />
       <div className='content-container'>{displayComponent()}</div>
     </>

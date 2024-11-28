@@ -34,7 +34,7 @@ const Adopt = () => {
         description='Check out our animals and find out how you can adopt one!'
         url={window.location.href}
       />
-      <PageHeader/>
+      <PageHeader title='Adopt' image_url='/header-bg-imgs/adopt-imgs.webp'/>
       <AdoptSubNav setShownComponent={setShownComponent} />
       <div className='content-container'>{displayComponent()}</div>
     </>

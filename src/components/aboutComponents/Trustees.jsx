@@ -1,7 +1,10 @@
+// Imports
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { IoIosClose } from "react-icons/io";
+// Icon Imports
+import { IoIosClose } from 'react-icons/io';
 
+// trustees component found in about page in trustee section
 const Trustees = () => {
   const [openTrusteeModal, setOpenTrusteeModal] = useState(null);
   const [trustees, setTrustees] = useState([]);
@@ -11,6 +14,7 @@ const Trustees = () => {
   const baseURL = import.meta.env.VITE_WP_API_BASEURL;
   const trusteesEndpoint = `${baseURL}/trustees?_embed`;
 
+  // Fetch trustees from wordpress api data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,6 +31,7 @@ const Trustees = () => {
     fetchData();
   }, []);
 
+  // Get featured image from wordpress posts under this trustee custom post type
   const getFeaturedImage = (trustee) => {
     if (
       trustee &&
@@ -40,14 +45,17 @@ const Trustees = () => {
   };
 
   return (
+    // Component parent container
     <div className='trustee-section-container subnav-section-container'>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>{error}</p>
       ) : (
+        // If returned succesfully shows all trustee posts
         <div className='trustee-container'>
           <h2>Trustees</h2>
+          {/* Trustee data taken and placed from api data */}
           <div className='trustee-boxes-container four-column-grid-container'>
             {trustees.map((trustee, index) => (
               <div key={`${trustee.slug}-${index}`} className='trustee-card'>
@@ -57,12 +65,14 @@ const Trustees = () => {
                     alt={trustee.title?.rendered || 'Trustee'}
                   />
                 </div>
+                {/* Button opens modal with more information of the trustee */}
                 <button
                   className='secondary-button'
                   onClick={() =>
                     setOpenTrusteeModal({
                       title: trustee.title?.rendered,
                       content: trustee.content?.rendered,
+                      image: getFeaturedImage(trustee),
                     })
                   }
                 >
@@ -72,6 +82,7 @@ const Trustees = () => {
             ))}
           </div>
 
+          {/* info returned and shown in trustee modal when opened*/}
           {openTrusteeModal && (
             <TrusteeModal
               title={openTrusteeModal.title}
@@ -79,22 +90,28 @@ const Trustees = () => {
               closeTrusteeModal={() => setOpenTrusteeModal(null)}
             />
           )}
+
         </div>
-      )}
+      )};
     </div>
   );
 };
 
-const TrusteeModal = ({ title, content, closeTrusteeModal }) => (
+// What we do modal display when opened
+const TrusteeModal = ({ title, content, image, closeTrusteeModal }) => (
+  
   <div className='modal-overlay'>
     <div className='modal'>
+      <img src={image} alt={title || 'Trustee'} />
       <h3>{title}</h3>
       <div dangerouslySetInnerHTML={{ __html: content }} />
+      {/* X button close modal */}
       <button className='close-modal-button' onClick={closeTrusteeModal}>
         <IoIosClose />
       </button>
     </div>
   </div>
+
 );
 
 export default Trustees;

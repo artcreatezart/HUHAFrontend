@@ -1,10 +1,65 @@
+/* Font import Nunito and Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* GLOBAL VARIABLES START */
+/* VARIABLES START -----------------*/
+:root {
+  --primary-color: #5FB1BF;
+  --secondary-color: #EA7B3B;
+  --section-color: #171717;
+  --header-font-family:  "Nunito", serif;
+  --header-font-weight: 600;
+  --subheader-font-weight: 400;
+  --body-font-family: "Inter", serif;
+}
+/*  VARIABLES END -----------------*/
+
+body {
+  background-color: #F7F8FF;
+}
+/* GLOBAL CSS START -----------------*/
+h1 {
+  font-size: 4.5rem;
+  text-shadow: 1px 2px 5px #171717;
+  color: white;
+  font-family: var(--header-font-family);
+  font-weight: var(--header-font-weight);
+}
+
+h2 {
+  font-size: 3rem;
+  font-family: var(--header-font-family);
+  font-weight: var(--header-font-weight);
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-family: var(--header-font-family);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: 0.5px;
+}
+
+h4 {
+  font-family: var(--body-font-family);
+}
+
+p, ul{
+  line-height: 25px;
+  letter-spacing: 0.3px;
+  font-family: var(--body-font-family);
+  font-size: 0.9rem;
+}
+
+img {
+  border-radius: 3px;
+}
+
 button {
   display: flex;
   padding: 0.5rem 3rem;
@@ -21,12 +76,53 @@ button a {
   text-decoration: none;
 }
 
-/* GLOBAL VARIABLES END */
+/* Page Header */
+.header-section {
+  width: 100vw;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+}
 
 
-/* GLOBAL CSS START*/
+.mission-statement-home-header {
+  font-size: 2rem;
+}
+/* SubNav css  */
+.subnav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3); 
+  -webkit-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
+  -moz-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
+}
 
-/* GLOBAL CSS END*/
+.subnav-container li {
+  list-style: none;
+  text-transform: uppercase;
+}
+
+/* Four colum grid style */
+.four-column-grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5rem;
+  grid-row-gap: 5rem;
+  place-items: center;
+}
+
+.paw-point-icon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+/* GLOBAL CSS END -----------------*/
 
 
 /* Navbar Css Starts*/
@@ -57,19 +153,6 @@ nav .navbar-links button{
   height: 30px;
 }
 /* Navbar Css Ends*/
-
-/* SubNav css starts */
-.subnav-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 3rem;
-}
-
-.subnav-container li {
-  list-style: none;
-  text-transform: uppercase;
-}
 
 .navbar-links li {
   list-style: none;
@@ -113,6 +196,8 @@ nav .navbar-links button{
   height: 500px;
   position: relative;
   margin-bottom: 8rem;
+  background-position: center;
+  background-size: cover;
 }
 
 .home-header-section h1 {
@@ -146,6 +231,9 @@ nav .navbar-links button{
   text-transform: uppercase;
   border-radius: 3px;
   align-self: center;
+  box-shadow: 0px 4px 18px -8px rgba(23,23,23,0.66);
+  -webkit-box-shadow: 0px 4px 18px -8px rgba(23,23,23,0.66);
+  -moz-box-shadow: 0px 4px 18px -8px rgba(23,23,23,0.66);
 }
 
 .core-value-icon {
@@ -153,11 +241,6 @@ nav .navbar-links button{
   height: 50%;
 }
 
-/* Page Header */
-.header-section {
-  width: 100vw;
-  height: 200px;
-}
 /* HEADER Section Css Ends */
 
 
@@ -202,23 +285,17 @@ nav .navbar-links button{
   padding: 0 3rem;
 }
 
-.four-column-grid-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 5rem;
-  grid-row-gap: 5rem;
-  place-items: center;
-}
-
 .home-card {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   border-radius: 3px;
-  background-color: aqua;
+  box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3); 
+  -webkit-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
+  -moz-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
   padding: 1rem;
+  background-color: white;
 }
 
 .home-card a button {
@@ -310,14 +387,14 @@ nav .navbar-links button{
 .sponsor-boxes-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   place-items: center;
   text-align: center;
 }
 
 .sponsor-boxes-container img{
-  width: 200px;
+  width: 150px;
   object-fit: contain;
   object-position: center;
 
@@ -407,6 +484,21 @@ nav .navbar-links button{
   opacity: 50%;
 }
 
+/* support modal */
+.support-animal-modal {
+  background: #171717;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-height: 80vh;  /* Adjust this based on your desired max height for the modal */
+  position: relative;
+  overflow: hidden; 
+}
+
+.support-animal-grid-container {
+  overflow-y: auto;  /* Allow vertical scrolling when content exceeds the available height */
+  padding-right: 10px;
+}
 
 /* history section */
 .history-about-section {
@@ -438,10 +530,6 @@ nav .navbar-links button{
   align-items: center; 
   justify-content: flex-start; 
   gap: 1rem;
-}
-
-.paw-point-icon {
-  width: 50px;
 }
 
 /* Trustee section */
@@ -479,6 +567,7 @@ nav .navbar-links button{
   display: flex;
   width: 100%;
   gap: 5rem;
+  margin-bottom: 3rem;
 }
 
 .impact-img-left-container {
@@ -503,9 +592,110 @@ nav .navbar-links button{
 
 /* Support Page Css */
 /* Volunteering sectionå */
+.volunteering-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.top-volunteering-section {
+  display: flex;
+  gap: 5rem;
+}
+
+.top-img-volunteering-container {
+  background-image: url(/header-bg-imgs/support-volunteer-img.webp);
+  width: 50%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px;
+}
+
+.top-descript-volunteering-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.middle-volunteering-section {
+  display: flex;
+  gap: 5rem;
+  width: 100%;
+}
+
+.middle-points-volunteering-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+}
+
+.middle-descript-volunteering-container {
+  width: 50%;
+}
+
+.bottom-volunteer-option-container {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* Fundraise sectionå */
+.fundraise-section {
+  display: flex;
+  width: 100%;
+  gap: 5rem;
+}
+
+.left-descript-fundraise-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.left-descript-fundraise-container ul{
+  line-height: 2rem;
+  padding-left: 3rem;
+}
+
+.left-descript-fundraise-container button{
+  width: 100%;
+}
+
+.right-img-fundraise-container {
+  width: 50%;
+  background-image: url(/other-imgs/fundraise-img.webp);
+  background-position: center;
+  background-size: cover;
+}
+
 /* Support sectionå */
-/* Help sectionå */
+.support-animal-container {
+  display: flex;
+  gap: 5rem;
+}
+
+.left-descript-support-animal {
+  width: 50%;
+}
+
+.right-button-support-animal {
+  width: 50%;
+}
+
+.right-button-support-animal  button{
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* ???????? */
 .top-support-card {
   width: 100%;
 }
@@ -513,12 +703,160 @@ nav .navbar-links button{
 .top-support-card button {
   width: 100%;
 }
+/* ???????? */
+
+.animal-card img {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.animal-card {
+  color: #F7F8FF;
+}
+
+/* Help sectionå */
+
+.help-support-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.help-support-intro {
+  display: flex;
+  gap: 5rem;
+}
+
+.left-help-support-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 50%;
+}
+
+.right-help-support-intro {
+  width: 50%;
+  height: 100%;
+  align-self: end;
+}
+
+.right-help-support-intro button{
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.middle-rehome-support-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.middle-rehome-support-container button {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.information-middle-rehome-container {
+  display: flex;
+  width: 100%;
+  gap: 5rem;
+}
+
+.left-middle-rehome-container, .right-middle-rehome-container, .left-bottom-disaster-container, .right-bottom-disaster-container {
+  width: 50%;
+}
+
+.left-middle-rehome-container ul{
+  margin-left: 2rem;
+}
+
+.bottom-disaster-support-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.information-bottom-disaster-container {
+  display: flex;
+  gap: 5rem;
+}
+
+.right-two-buttons-bottom-disaster-container {
+  width: 100%;
+  display: flex;
+}
+
+.right-two-buttons-bottom-disaster-container button{
+  width: 100%;
+}
+
+/* bequest section */
+.top-bequest-container {
+  display: flex;
+  gap: 5rem;
+}
+
+.top-left-bequest-container {
+  width: 50%;
+    height: 100%;
+}
+
+.top-left-img-bequest{
+  background-image: url(/header-bg-imgs/support-volunteer-img.webp);
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 1rem;
+}
+
+.top-right-bequest-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.middle-bequest-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.middle-bequest-container h2 {
+  margin-top: 3rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.bequest-option-container {
+  text-align: center;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buttons-middle-bequest-container {
+  width: 100%;
+}
+
+.top-two-buttons-bequest-container  {
+  display: flex;
+  width: 100%;
+}
+
+
 /* Footer Css Starts*/
 footer {
   display: flex;
   padding: 1.25rem;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3); 
+  -webkit-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
+  -moz-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
+  margin-top: 3rem;
 }
 
 footer .footer-contact {

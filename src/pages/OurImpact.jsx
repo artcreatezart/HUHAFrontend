@@ -37,7 +37,7 @@ const About = () => {
         description='Look into how HUHA has helped animals since we have been founded'
         url={window.location.href}
       />
-      <PageHeader/>
+      <PageHeader title='Our Impact' image_url='/header-bg-imgs/impact-img.webp'/>
       <div className='impact-about-container subnav-section-container'>
         <div className='impact-img-left-container'/>
         

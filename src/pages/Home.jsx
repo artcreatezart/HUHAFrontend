@@ -41,7 +41,7 @@ const Home = () => {
         description='Browse HUHAs website'
         url={window.location.href}
       />
-      <HomeHeader/>
+      <HomeHeader image_url='/header-bg-imgs/home-header-img.webp'/>
       <div className='huha-home-section'>
 
         <div className='huha-description'>
@@ -56,7 +56,7 @@ const Home = () => {
         </div>
 
         <div className='four-card-sections'>
-          <h1>Advice</h1>
+          <h2>Advice</h2>
           <div className='home-four-card-container four-column-grid-container'>
             {/* Advice Card #1 */}
             <div className='home-card home-advice-card'>

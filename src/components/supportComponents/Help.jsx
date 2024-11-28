@@ -26,23 +26,23 @@ const Help = () => {
         <h3>Rehome Your Animal</h3>
         <div className='information-middle-rehome-container'>
           <div className='left-middle-rehome-container'>
-            <p>Surrendering an animal is always a difficult time for everyone involved, but HUHA is here to help if we can. There are so many reasons why wonderful animals who had loving homes end up in our care -- from owners suddenly passing or needing to go into long term care to overseas moves to other circumstances changing so that owners can no longer care for the animal.</p>
+            <p>Surrendering an animal is always a difficult time for everyone involved, but HUHA is here to help if we can. There are so many reasons why wonderful animals who had loving homes end up in our care -- from owners suddenly passing or needing to go into long term care to overseas moves to other circumstances changing so that owners can no longer care for the animal.</p><br/>
             <ul>
-              <li>To give your pet the best chance at finding a new forever home, we’ll need to gather as much information as possible about the animal, its veterinary and behaviour history, its’ likes, dislikes and quirks.</li>
+              <li>To give your pet the best chance at finding a new forever home, we’ll need to gather as much information as possible about the animal, its veterinary and behaviour history, its’ likes, dislikes and quirks.</li><br/>
               <li>To start the surrender process, please contact us and a team member will be in touch. Call if Urgent</li>
             </ul>
+            <Link to='/contact'>
+              <button className='primary-button'>Get In Touch</button>
+            </Link>
           </div>
           <div className='right-middle-rehome-container'>
             <ul>
-              <li>Note: Unfortunately our shelters are often filled to capacity and there may be a waitlist for rehoming animals. We may be able to do a community rehome post under these circumstances.</li>
+              <li>Note: Unfortunately our shelters are often filled to capacity and there may be a waitlist for rehoming animals. We may be able to do a community rehome post under these circumstances.</li><br/>
               <li>Unfortunately we generally cannot accept animals who have a history of biting people or hurting other animals though there are always exceptions such as if a farm dog attacked a sheep or chicken -- we would simply rehome it where there isn’t stock around.</li>
             </ul>
           </div>
 
         </div>
-        <Link to='/contact'>
-            <button className='primary-button'>Get In Touch</button>
-        </Link>
         
       </div>
 
@@ -68,10 +68,7 @@ const Help = () => {
           </div>
 
         </div>
-        <Link to='/contact'>
-            <button className='primary-button'>Get In Touch</button>
-        </Link>
-        
+
       </div>
     </div>
   )

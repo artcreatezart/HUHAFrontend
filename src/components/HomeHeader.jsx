@@ -2,10 +2,10 @@ import React from 'react'
 import { FaSlideshare, FaPaw, FaShoePrints, FaUsers} from "react-icons/fa";
 import { FaThumbsUp } from "react-icons/fa6";
 
-const HomeHeader = ({ title, image_url }) => {
+const HomeHeader = ({ image_url }) => {
   return (
     <div className='home-header-section' style={{ backgroundImage: `linear-gradient( rgba( 52,	73,	102, 0.4 ), rgba( 52,	73,	102, 0.25 )), url(${ image_url })`}}>
-        <h1>Helping you help animals<br/><br/><span>together we save lives</span></h1>
+        <h1>Helping you help animals<br/><span className='mission-statement-home-header'>together we save lives</span></h1>
         <div className='home-header-core-values-container'>
             {/* Core values container found on bottom line of home header image */}
             <div className='home-header-core-value'>

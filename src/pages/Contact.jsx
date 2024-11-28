@@ -11,7 +11,7 @@ const Contact = () => {
         description='Get In touch! We would love to hear from you.'
         url={window.location.href}
       />
-      <PageHeader/>
+      <PageHeader title='Contact' image_url='/header-bg-imgs/contact-img.webp'/>
       <div className='contact-container subnav-section-container'>
         <div className='contact-inforamtion-container'>
           <div className='shelter-contact-info'>

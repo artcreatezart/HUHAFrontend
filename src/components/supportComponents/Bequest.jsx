@@ -17,7 +17,7 @@ const Bequest = () => {
       </div>
 
       <div className='middle-bequest-container'>
-        <h3>Main Types of Bequests</h3>
+        <h2>Main Types of Bequests</h2>
         <div className='middle-left-bequest-container four-column-grid-container'>
           <div className='bequest-option-container'>
             <h4>General Purpose Bequest</h4>

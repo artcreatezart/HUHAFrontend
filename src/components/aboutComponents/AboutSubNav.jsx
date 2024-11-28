@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+// Imports
 import { NavLink } from 'react-router-dom';
 
+// Subnav Component for the navbar within certain pages to hide and show hidden components
 const AboutSubNav = ({setShownComponent}) => {
 
   return (
     <>
       <div className='subnav-container'>
+
+        {/* Subnav Link 1 */}
         <li>
           <NavLink 
             onClick={() => setShownComponent('Our Purpose')}
@@ -16,7 +19,7 @@ const AboutSubNav = ({setShownComponent}) => {
           </NavLink>
         </li>
       
-
+        {/* Subnav Link 2 */}
         <li>
           <NavLink 
             onClick={() => setShownComponent('What We Do')}
@@ -27,6 +30,7 @@ const AboutSubNav = ({setShownComponent}) => {
           </NavLink>
         </li>
 
+        {/* Subnav Link 3 */}
         <li>
           <NavLink 
             onClick={() => setShownComponent('Current Campaign')}
@@ -37,6 +41,7 @@ const AboutSubNav = ({setShownComponent}) => {
           </NavLink>
         </li>
 
+        {/* Subnav Link 4 */}
         <li>
           <NavLink 
             onClick={() => setShownComponent('History')}
@@ -47,6 +52,7 @@ const AboutSubNav = ({setShownComponent}) => {
           </NavLink>
         </li>
 
+        {/* Subnav Link 1 */}
         <li>
           <NavLink 
             onClick={() => setShownComponent('Trustees')}
@@ -57,6 +63,7 @@ const AboutSubNav = ({setShownComponent}) => {
           </NavLink>
         </li>
 
+        {/* Subnav Link 5 */}
         <li>
           <NavLink 
             onClick={() => setShownComponent('Sponsors')}

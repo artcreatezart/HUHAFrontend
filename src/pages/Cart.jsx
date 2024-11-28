@@ -9,7 +9,7 @@ const Cart = () => {
         description='Purchase items in your cart or continue shpopping!'
         url={window.location.href}
       />
-      <PageHeader/>
+      <PageHeader title='Cart' image_url='/header-bg-imgs/shop-cart-img.webp'/>
       <div className='cart-container subnav-section-container'>
         Cart
       </div>

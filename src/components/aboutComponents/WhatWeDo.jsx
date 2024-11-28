@@ -1,9 +1,18 @@
+// Imports
 import { useState } from 'react';
-import { IoIosClose } from "react-icons/io";
 
+// Icons imports
+import { IoIosClose } from 'react-icons/io';
+
+// What we do - HUHA component found in about page under what we do section
 const WhatWeDo = () => {
   const [openWhatModal, setOpenWhatModal] = useState(null);
 
+  /** --- What we do information array ----
+   * Title - Category of what we do
+   * Exerpt - short description found on page for each category
+   * Content - displayed further information when opened modal
+   */
   const whatModalContent = {
     disaster: {
       title: 'Disaster Response',
@@ -37,6 +46,7 @@ const WhatWeDo = () => {
     },
   };
 
+  // 
   return (
     <div className='what-about-container subnav-section-container'>
       <h2>What We Do</h2>
@@ -55,6 +65,7 @@ const WhatWeDo = () => {
         ))}
       </div>
 
+      {/* info returned and shown in what we do category modal when opened*/}
       {openWhatModal && (
         <WhatModal
           title={whatModalContent[openWhatModal].title}
@@ -66,11 +77,14 @@ const WhatWeDo = () => {
   );
 };
 
+
+// What we do modal display when opened
 const WhatModal = ({ title, content, closeWhatModal }) => (
   <div className='modal-overlay'>
     <div className='modal'>
       <h3>{title}</h3>
       <p>{content}</p>
+      {/* X Close modal button */}
       <button className='close-modal-button' onClick={closeWhatModal}>
         <IoIosClose />
       </button>
