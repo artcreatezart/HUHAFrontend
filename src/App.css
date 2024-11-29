@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.customize-section-color {
+  background-color: var(--section-color);
+}
+
 /* VARIABLES START -----------------*/
 :root {
   --primary-color: #5FB1BF;
@@ -76,6 +80,15 @@ button a {
   text-decoration: none;
 }
 
+/* two grid layout */
+.two-column-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 5rem;
+  grid-row-gap: 3rem;
+
+}
+
 /* Page Header */
 .header-section {
   width: 100vw;
@@ -113,7 +126,7 @@ button a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 5rem;
-  grid-row-gap: 5rem;
+  grid-row-gap: 3rem;
   place-items: center;
 }
 
@@ -150,7 +163,7 @@ nav .navbar-links button{
 }
 
 .nav-logo img {
-  height: 30px;
+  height: 40px;
 }
 /* Navbar Css Ends*/
 
@@ -166,6 +179,9 @@ nav .navbar-links button{
   font-weight: 400;
   transition: color 0.3s ease;
   transition: all 0.3s ease;
+  color: white;
+  font-family: var(--header-font-family);
+  font-weight: var(--subheader-font-weight);
 }
 
 .navbar-links li a::after {
@@ -174,7 +190,7 @@ nav .navbar-links button{
   width: 0;
   height: 3px;
   border-radius: 8px;
-  background: black;
+  background: rgb(255, 255, 255);
   transition: width .5s;
 }
 
@@ -346,7 +362,6 @@ nav .navbar-links button{
 /* Campaign Component Css Starts */
 .campaign-section {
   height: auto;
-  background-color: pink;
 }
 
 .campaign-card{
@@ -404,8 +419,7 @@ nav .navbar-links button{
 
 /* About Page Css Starts */
 .subnav-section-container{
-  padding: 0 3rem;
-  margin-top: 3rem;
+  padding: 3rem 3rem 3rem 3rem ;
   width: 100%;
 }
 
@@ -467,6 +481,7 @@ nav .navbar-links button{
   width: 80%;
   height: 80%;
   position: relative;
+  color: #F7F8FF;
 }
 
 .close-modal-button {
@@ -482,6 +497,17 @@ nav .navbar-links button{
 
 .close-modal-button:hover {
   opacity: 50%;
+}
+
+.trustee-modal {
+  display: flex;
+  gap: 5rem;
+}
+
+.trustee-modal-img {
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* support modal */
@@ -567,7 +593,6 @@ nav .navbar-links button{
   display: flex;
   width: 100%;
   gap: 5rem;
-  margin-bottom: 3rem;
 }
 
 .impact-img-left-container {
@@ -585,6 +610,35 @@ nav .navbar-links button{
 }
 
 /* Diasaster Response section */
+.impact-stories-box-title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.impact-stories-container h2{
+  color: white;
+  font-size: 4rem;
+}
+
+.impact-stories-container h4 {
+  color: rgba(255, 255, 255, 0.876);
+  font-family: var(--header-font-family);
+  font-weight: var(--subheader-font-weight);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  width: 70%;
+
+}
+.impact-stories-card h3{
+  font-size: 2rem;
+  font-weight: var(--subheader-font-weight);
+  text-transform: uppercase;
+}
+
+.impact-stories-card {
+  color: white;
+}
 /* welfare reform section */
 /* animal rescue section */
 /* animal exploitation section */
@@ -856,7 +910,7 @@ footer {
   box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3); 
   -webkit-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
   -moz-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
-  margin-top: 3rem;
+  color: #F7F8FF;
 }
 
 footer .footer-contact {
