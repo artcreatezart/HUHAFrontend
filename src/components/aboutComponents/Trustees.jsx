@@ -115,7 +115,7 @@ const Trustees = () => {
           )}
 
         </div>
-      )};
+      )}
     </div>
   );
 };

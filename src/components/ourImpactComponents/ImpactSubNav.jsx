@@ -2,14 +2,20 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 
 const ImpactSubNav = ({setShownComponent}) => {
+  const [activeLink, setActiveLink] = useState('');
+
+  const handleClick = (componentName) => {
+    setActiveLink(componentName); 
+    setShownComponent(componentName); 
+  };
 
   return (
     <>
       <div className='subnav-container'>
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Disaster Response')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Disaster Response')}
+            className={activeLink === 'Disaster Response' ? 'active-link' : ''}
             >
             Disaster Response
 
@@ -19,8 +25,8 @@ const ImpactSubNav = ({setShownComponent}) => {
 
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Welfare Reform')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Welfare Reform')}
+            className={activeLink === 'Welfare Reform' ? 'active-link' : ''}
             >
             Welfare Reform
 
@@ -29,8 +35,8 @@ const ImpactSubNav = ({setShownComponent}) => {
 
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Animal Rescue')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Animal Rescue')}
+            className={activeLink === 'Animal Rescue' ? 'active-link' : ''}
             >
             Animal Rescue
 
@@ -39,8 +45,8 @@ const ImpactSubNav = ({setShownComponent}) => {
 
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Animal Exploitation')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Animal Exploitation')}
+            className={activeLink === 'Animal Exploitation' ? 'active-link' : ''}
             >
             Animal Exploitation
 
@@ -49,8 +55,8 @@ const ImpactSubNav = ({setShownComponent}) => {
 
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Education')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Education')}
+            className={activeLink === 'Education' ? 'active-link' : ''}
             >
             Education
 

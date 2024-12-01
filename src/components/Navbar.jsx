@@ -27,7 +27,9 @@ const Navbar = () => {
 
         fetchNavLogo();
     }, [])
+
   return (
+    
     // Navbar Content Starts f
     <header>
         <nav className='navbar customize-section-color'>
@@ -103,9 +105,8 @@ const Navbar = () => {
 
                 <NavLink 
                     to='/adopt'
-                    className='secondary-button'
                     >
-                        <button>
+                        <button className='primary-button'>
                             <FaPaw/>
                             Adopt
 
@@ -116,9 +117,8 @@ const Navbar = () => {
                 
                 <NavLink 
                     to='/donate'
-                    className='secondary-button'
                     >
-                        <button>
+                        <button className='secondary-button'>
                             <FaDonate/>
                             Donate
 

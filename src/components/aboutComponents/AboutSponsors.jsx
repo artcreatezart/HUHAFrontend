@@ -34,7 +34,7 @@ const AboutSponsors = () => {
 
   //  Sponsors content 
   return (
-    <div className='home-sponsor-container'>
+    <div className='home-sponsor-container subnav-section-container' >
         { loading ? <p>Loading...</p> : <Sponsors sponsors={sponsors}/>}
     </div>
   )

@@ -1,8 +1,15 @@
 // Imports
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 // Subnav Component for the navbar within certain pages to hide and show hidden components
 const AboutSubNav = ({setShownComponent}) => {
+  const [activeLink, setActiveLink] = useState('');
+
+  const handleClick = (componentName) => {
+    setActiveLink(componentName); 
+    setShownComponent(componentName); 
+  };
 
   return (
     <>
@@ -11,8 +18,8 @@ const AboutSubNav = ({setShownComponent}) => {
         {/* Subnav Link 1 */}
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Our Purpose')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Our Purpose')}
+            className={activeLink === 'Our Purpose' ? 'active-link' : ''}
             >
             Our Purpose
 
@@ -22,8 +29,8 @@ const AboutSubNav = ({setShownComponent}) => {
         {/* Subnav Link 2 */}
         <li>
           <NavLink 
-            onClick={() => setShownComponent('What We Do')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('What We Do')}
+            className={activeLink === 'What We Do' ? 'active-link' : ''}
             >
             What We Do
 
@@ -33,8 +40,8 @@ const AboutSubNav = ({setShownComponent}) => {
         {/* Subnav Link 3 */}
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Current Campaign')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Current Campaign')}
+            className={activeLink === 'Current Campaign' ? 'active-link' : ''}
             >
             Current Campaign
 
@@ -44,8 +51,8 @@ const AboutSubNav = ({setShownComponent}) => {
         {/* Subnav Link 4 */}
         <li>
           <NavLink 
-            onClick={() => setShownComponent('History')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('History')}
+            className={activeLink === 'History' ? 'active-link' : ''}
             >
             History
 
@@ -55,8 +62,8 @@ const AboutSubNav = ({setShownComponent}) => {
         {/* Subnav Link 1 */}
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Trustees')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Trustees')}
+            className={activeLink === 'Trustees' ? 'active-link' : ''}
             >
             Trustees
 
@@ -66,8 +73,8 @@ const AboutSubNav = ({setShownComponent}) => {
         {/* Subnav Link 5 */}
         <li>
           <NavLink 
-            onClick={() => setShownComponent('Sponsors')}
-            className={({isActive}) => (isActive ? 'active-link' : '')}
+            onClick={() => handleClick('Sponsors')}
+            className={activeLink === 'Sponsors' ? 'active-link' : ''}
             >
             Sponsors
 

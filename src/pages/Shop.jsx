@@ -67,9 +67,9 @@ const Shop = () => {
     setTimeout(() => {
         setShowAddToCart(false);
     }, 3000);
-};
+   };  
 
-  // Removes "donations" category from buttons
+  // Removes 'donations' category from buttons
   const filteredCategories = categories.filter(
     (category) => category.name.toLowerCase() !== 'donations'
   );
@@ -77,15 +77,15 @@ const Shop = () => {
   return (
     <>
       <Seo
-        title="Shop - HUHA Summative"
-        description="Look at our selection of products we provide."
+        title='Shop - HUHA Summative'
+        description='Look at our selection of products we provide.'
         url={window.location.href}
       />
-      <PageHeader title="Shop" image_url="/header-bg-imgs/shop-cart-img.webp" />
-      <div className="shop-container subnav-section-container">
-        <div className="four-column-grid-container">
-          <div className="shop-info-container">
-            <div className="shop-card-info">
+      <PageHeader title='Shop' image_url='/header-bg-imgs/shop-cart-img.webp' />
+      <div className='shop-container subnav-section-container'>
+        <div className='four-column-grid-container'>
+          <div className='shop-info-container'>
+            <div className='shop-card-info'>
               <h2>Online Shop</h2>
               <p>
                 Our online shop is always open! <br />
@@ -98,8 +98,8 @@ const Shop = () => {
             </div>
           </div>
 
-          <div className="shop-info-container">
-            <div className="shop-card-info">
+          <div className='shop-info-container'>
+            <div className='shop-card-info'>
               <h2>Carterton Op Shop</h2>
               <p>
                 Tue to Fri 10am - 4pm <br /> Sat 9am - 3pm
@@ -111,8 +111,8 @@ const Shop = () => {
             </div>
           </div>
 
-          <div className="shop-info-container">
-            <div className="shop-card-info">
+          <div className='shop-info-container'>
+            <div className='shop-card-info'>
               <h2>Otaki Op Shop</h2>
               <p>
                 Tue to Sun <br />10am - 4pm
@@ -124,8 +124,8 @@ const Shop = () => {
             </div>
           </div>
 
-          <div className="shop-info-container">
-            <div className="shop-card-info">
+          <div className='shop-info-container'>
+            <div className='shop-card-info'>
               <h2>Petone Op Shop</h2>
               <p>
                 Tue to Sun<br />10am - 4pm
@@ -140,9 +140,9 @@ const Shop = () => {
         </div>
 
         {/* Category Buttons */}
-        <ul className="category-list">
+        <div className='product-category-buttons-list auto-grid-sub-nav'>
           <button
-            className="secondary-button"
+            className='primary-button'
             onClick={() => setProductCategory('')}
           >
             All Products
@@ -151,7 +151,7 @@ const Shop = () => {
             filteredCategories.map((category) => (
               <div key={category.id}>
                 <button
-                  className="secondary-button"
+                  className='primary-button'
                   onClick={() => setProductCategory(category.name)}
                 >
                   {category.name}
@@ -161,20 +161,20 @@ const Shop = () => {
           ) : (
             <p>Loading categories...</p>
           )}
-        </ul>
+        </div>
 
         {/* Product Display */}
-        <div className="product-list">
+        <div className='product-list'>
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
-              <div key={product.id} className="product-card">
+              <div key={product.id} className='product-card'>
                 <h3>{product.name}</h3>
                 <img
-                  src={product.images[0]?.src || '/placeholder.jpg'}
+                  src={product.images[0]?.src || ''}
                   alt={product.name}
                 />
                 <p>Price:  ${(product.prices.price / 100).toFixed(2)}</p>
-                <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                <button onClick={() => handleAddToCart(product)} className='primary-button'>Add to Cart</button>
               </div>
             ))
           ) : (

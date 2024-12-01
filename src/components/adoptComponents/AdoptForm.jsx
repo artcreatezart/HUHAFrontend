@@ -70,6 +70,7 @@ const AdoptForm = () => {
         method='POST'
         className='form-containers'
       >
+        <h1>Adopt Form</h1>
         <div  className='input'>
           <label htmlFor='name'>Name:</label>
           <input

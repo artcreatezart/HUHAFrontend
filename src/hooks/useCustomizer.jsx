@@ -8,6 +8,7 @@ const useCustomizer = () => {
   const [sectionedColor, setSectionedColor] = useState('')
   const [primaryBtnColor, setPrimaryBtnColor] = useState('');
   const [secondaryBtnColor, setSecondaryBtnColor] = useState('');
+  
   const baseURL = import.meta.env.VITE_WP_BASEURL;
 
   useEffect(() => {

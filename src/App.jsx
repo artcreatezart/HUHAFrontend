@@ -26,7 +26,9 @@ const App = () => {
   
     // Set background color and header font for body
     document.body.style.backgroundColor = `#${bgColor}`;
-    document.body.style.FontFamily = headerFontFamily ? `'${headerFontFamily}', sans-serif` : '';
+    document.querySelectorAll('h1, h2, h3').forEach(element => {
+      element.style.fontFamily = `'${headerFontFamily}', sans`;
+    });
   
   }, [bgColor, headerFontFamily, sectionedColor, primaryBtnColor, secondaryBtnColor]);
 

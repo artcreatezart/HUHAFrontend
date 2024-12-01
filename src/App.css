@@ -1,5 +1,5 @@
-/* Font import Nunito and Inter*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=DynaPuff:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=McLaren&family=Nunito:ital,wght@0,600;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -12,37 +12,57 @@
   --primary-color: #5FB1BF;
   --secondary-color: #EA7B3B;
   --section-color: #171717;
-  --header-font-family:  "Nunito", serif;
+  --header-font-family: "Nunito", serif;
   --header-font-weight: 600;
   --subheader-font-weight: 400;
   --body-font-family: "Inter", serif;
 }
 /*  VARIABLES END -----------------*/
 
+/* GLOBAL CSS START -----------------*/
 
 .customize-section-color {
   background-color: var(--customize-section-color);
 }
 
-/* GLOBAL CSS START -----------------*/
+a {
+  text-decoration: none;
+} 
+
+.primary-button {
+  background-color: var(--primary-btn-bg);
+  color: white;
+  text-decoration: none;
+}
+
+.primary-button:hover {
+  background-color: #ea7b3b7a;
+}
+
+.secondary-button {
+  background-color: var(--secondary-btn-bg);
+  color: white;
+} 
+
+.secondary-button:hover {
+  background-color: #5fb1bf7d;
+}
+
 h1 {
   font-size: 4.5rem;
   text-shadow: 1px 2px 5px #171717;
   color: white;
-  font-family: var(--header-font-family);
   font-weight: var(--header-font-weight);
 }
 
 h2 {
   font-size: 3rem;
-  font-family: var(--header-font-family);
   font-weight: var(--header-font-weight);
   color: var(--primary-color);
 }
 
 h3 {
   font-size: 1.6rem;
-  font-family: var(--header-font-family);
   font-weight: var(--subheader-font-weight);
   letter-spacing: 0.5px;
 }
@@ -72,10 +92,14 @@ button {
   cursor: pointer;
   border-radius: 3px;
   border: none;
-
 }
+
 button a {
   text-decoration: none;
+}
+
+.product-category-buttons-list button::after {
+  background-color: #171717;
 }
 
 /* two grid layout */
@@ -85,6 +109,12 @@ button a {
   grid-column-gap: 5rem;
   grid-row-gap: 3rem;
 
+}
+
+.auto-grid-sub-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
 }
 
 /* Page Header */
@@ -165,7 +195,7 @@ nav .navbar-links button{
 }
 /* Navbar Css Ends*/
 
-.navbar-links li {
+.navbar-links li, .subnav-container  {
   list-style: none;
   text-decoration: none;
   cursor: pointer;
@@ -173,7 +203,7 @@ nav .navbar-links button{
 
 .navbar-links li a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   transition: color 0.3s ease;
   transition: all 0.3s ease;
@@ -182,21 +212,39 @@ nav .navbar-links button{
   font-weight: var(--subheader-font-weight);
 }
 
-.navbar-links li a::after {
+.subnav-container li a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  color: var(--section-color);
+  font-family: var(--header-font-family);
+  font-weight: var(--subheader-font-weight);
+}
+
+.navbar-links li a::after, .subnav-container li a::after {
   content: '';
   display: block;
   width: 0;
-  height: 3px;
+  height: 2.5px;
   border-radius: 8px;
-  background: rgb(255, 255, 255);
   transition: width .5s;
 }
 
-.navbar-links li a:hover::after {
+.navbar-links li a::after {
+  background: rgb(255, 255, 255);
+}
+
+.subnav-container li a::after {
+  background-color: var(--section-color);
+}
+
+.navbar-links li a:hover::after, .subnav-container li a:hover::after {
   width: 100%;
 }
 
-.navbar-links li a.active-link::after {
+.navbar-links li a.active-link::after, .subnav-container li a.active-link::after {
   width: 100%; 
 }
 
@@ -576,7 +624,10 @@ nav .navbar-links button{
   gap: 1rem;
   padding: 1rem;
   border-radius: 3px;
-  background-color: aqua;
+  box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3); 
+  -webkit-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
+  -moz-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
+  color: #F7F8FF;
 }
 
 .trustee-img {
@@ -613,7 +664,6 @@ nav .navbar-links button{
   gap: 2rem;
 }
 
-/* Diasaster Response section */
 .impact-stories-box-title {
   display: flex;
   gap: 1rem;
@@ -643,10 +693,6 @@ nav .navbar-links button{
 .impact-stories-card {
   color: white;
 }
-/* welfare reform section */
-/* animal rescue section */
-/* animal exploitation section */
-/* education section */
 
 /* Support Page Css */
 /* Volunteering sectionå */
