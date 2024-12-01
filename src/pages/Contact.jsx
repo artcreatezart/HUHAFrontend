@@ -1,7 +1,8 @@
-import PageHeader from '../components/PageHeader'
 import Seo from '../components/Seo'
-import ContactForm from '../components/ContactForm'
 import { Link } from 'react-router-dom'
+// Component Imports
+import PageHeader from '../components/PageHeader'
+import ContactForm from '../components/ContactForm'
 
 const Contact = () => {
   return (
@@ -58,7 +59,10 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <ContactForm/>
+      <div className='customize-section-color'>
+        <h2>Contact Form</h2>
+        <ContactForm/>
+      </div>
     </>
   )
 }

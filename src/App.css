@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-.customize-section-color {
-  background-color: var(--section-color);
-}
-
 /* VARIABLES START -----------------*/
 :root {
   --primary-color: #5FB1BF;
@@ -23,9 +19,11 @@
 }
 /*  VARIABLES END -----------------*/
 
-body {
-  background-color: #F7F8FF;
+
+.customize-section-color {
+  background-color: var(--customize-section-color);
 }
+
 /* GLOBAL CSS START -----------------*/
 h1 {
   font-size: 4.5rem;
@@ -255,6 +253,7 @@ nav .navbar-links button{
 .core-value-icon {
   font-size: 2.5rem;
   height: 50%;
+  color: var(--secondary-color);
 }
 
 /* HEADER Section Css Ends */
@@ -373,12 +372,17 @@ nav .navbar-links button{
 .left-img-campaign-description {
   width: 50%;
   height: auto;
-  background-color: blue;
+}
+
+.left-img-campaign-description img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+
 }
 
 .right-text-campaign-description {
   width: 50%;
-  background-color: aqua;
   display: flex;
   flex-direction: column;
   gap: 2rem;

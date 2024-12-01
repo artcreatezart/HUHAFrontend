@@ -10,6 +10,9 @@ import Cart from '../pages/Cart'
 import Contact from '../pages/Contact'
 import Shop from '../pages/Shop'
 import Donate from '../pages/Donate'
+import CartSuccess from '../pages/CartSuccess'
+import SingleAnimal from '../pages/SingleAnimal'
+import AvailableAdoptAnimals from './adoptComponents/AvailableAdoptAnimals'
 
 const Links = () => {
   return (
@@ -23,7 +26,10 @@ const Links = () => {
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/shop' element={<Shop />} />
       <Route path='/donate' element={<Donate/>} />
-      </Routes>
+      <Route path='/cartsuccess' element={<CartSuccess/>}/>
+      <Route path='/animals' element={<AvailableAdoptAnimals/>}/>
+      <Route path='/animals/:id' element={<SingleAnimal/>}/>
+    </Routes>
   )
 }
 

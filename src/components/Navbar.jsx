@@ -1,11 +1,13 @@
 import { FaDonate, FaPaw } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { CartContext } from '../context/CartContext';
 
 const baseURL = import.meta.env.VITE_WP_BASEURL
 
 const Navbar = () => {
+    const {cart} = useContext(CartContext);
     const [logoURL, setLogoURL] = useState('')
 
     useEffect(() => {
@@ -75,7 +77,18 @@ const Navbar = () => {
                         to='/cart'
                         className={({isActive}) => (isActive ? 'active-link' : '')}
                     >
-                        Cart
+                        {cart.length === 0 ? (
+
+                        <div className='no-item-cart'>Cart</div>
+                    ) : (
+                        <ul className='cart-icon'>
+                                <li >
+                                    Cart
+                                    <span>({cart.length})</span>
+                                </li>
+
+                        </ul>
+                    )} 
                     </NavLink>
                 </li>
 

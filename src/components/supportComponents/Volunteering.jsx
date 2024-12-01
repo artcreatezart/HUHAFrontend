@@ -1,6 +1,30 @@
+import { useState } from 'react';
+// Imports components
+import VolunteerForm from './VolunteerForm';
+// Import icons
 import {FaPaw} from 'react-icons/fa'
+import { IoIosClose } from 'react-icons/io';
+
+// What we do modal display when opened
+const VolunteerModal = ({ closeVolunteerModal }) => (
+
+  <div className='modal-overlay'>
+    <div className='modal volunteer-modal'>
+      <VolunteerForm/>
+      
+      {/* X button close modal */}
+      <button className='close-modal-button' onClick={closeVolunteerModal}>
+        <IoIosClose />
+      </button>
+    </div>
+  </div>
+
+);
 
 const Volunteering = () => {
+  const [openVolunteerModal, setOpenVolunteerModal] = useState(null);
+
+
   return (
     <div className='volunteering-section subnav-section-container'>
       
@@ -9,7 +33,11 @@ const Volunteering = () => {
         <div className='top-descript-volunteering-container'>
           <h2>Volunteering</h2>
           <h3>Fill a regular volunteer position at HUHA's animal shelter or at one of our op shops and help to make a difference in the lives of animals</h3>
-          <button className='primary-button'>Apply To Volunteer</button>
+          <button className='primary-button' 
+            onClick={() =>
+            setOpenVolunteerModal({})}
+            >Apply To Volunteer
+          </button>
         </div>
       </div>
 
@@ -85,6 +113,13 @@ const Volunteering = () => {
         </div>
 
       </div>
+
+      {/* info returned and shown in Volunteermodal when opened*/}
+      {openVolunteerModal && (
+        <VolunteerModal
+          closeVolunteerModal={() => setOpenVolunteerModal(null)}
+        />
+      )}
     </div>
   )
 }

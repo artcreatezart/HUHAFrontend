@@ -1,11 +1,49 @@
 import PageHeader from '../components/PageHeader'
 import Seo from '../components/Seo'
 import { Link } from 'react-router-dom'
-import DonateForm from '../components/DonateForm'
-import { FaFingerprint } from "react-icons/fa";
+import { FaFingerprint } from 'react-icons/fa';
+import { CartContext } from '../context/CartContext';
+import { useState, useContext, useEffect } from 'react';
+import wooCommerceApi from '../woocommerceApi';
 
 
 const Donate = () => {
+  const [categories, setCategories] = useState([]);
+  const [shownProductCategory, setProductCategory] = useState(''); 
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]); 
+  const {addToCart} = useContext(CartContext);
+  const [showAddToCart, setShowAddToCart] = useState(false);
+
+  useEffect(() => {
+    const fetchDonations = async () => {
+      try {
+        const productResponse = await wooCommerceApi.get('/products');
+  
+        // Filter products belonging to the "Donations" category
+        const donationProducts = productResponse.data.filter(product =>
+          product.categories.some(
+            category => category.name.toLowerCase() === 'donations'
+          )
+        );
+        setProducts(donationProducts);
+      } catch (error) {
+        console.error('Error fetching donation products:', error);
+      }
+    };
+  
+    fetchDonations();
+  }, []);
+
+  const handleAddToCart = (product) =>{
+    addToCart(product); 
+    setShowAddToCart(true);
+
+    setTimeout(() => {
+        setShowAddToCart(false);
+    }, 3000);
+  };
+
   return (
     <>
     <Seo
@@ -33,7 +71,24 @@ const Donate = () => {
           </Link>
         </div>
       </div>
-      <DonateForm/>
+      <div className="product-list">
+        {products.length > 0 ? (
+          products.map(product => (
+            <div key={product.id} className="product-card">
+              <h3>{product.name}</h3>
+              <img
+                src={product.images[0]?.src || '/placeholder.jpg'}
+                alt={product.name}
+              />
+              <p>Price:  ${(product.prices.price / 100).toFixed(2)}</p>
+              <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+            </div>
+          ))
+        ) : (
+          <p>No donation products available.</p>
+        )}
+      </div>
+
       <div className='donate-bequest-container'>
         <div className='left-ingo-donate-bequest-container'>
           <h3>Make a Bequest</h3>
