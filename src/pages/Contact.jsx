@@ -25,18 +25,21 @@ const Contact = () => {
                 <p>Catteam.huha@gmail.com <br/>
                   04 392 3232</p>
               </div>
+
               <div className='shelter-contact-box'>
                 <h3>HUHA Otaki dog shelter</h3>
                 <p><span className='bold-text'>Public hours:</span>  Wed to Sun from 12 - 3pm or by appointment.</p>
                 <p>Otaki.huha@gmail.com<br/>
                     04 392 3232</p>
               </div>
+
               <div className='shelter-contact-box'>
                 <h3>Media enquiries</h3>
                 <p>
                   enquire.huha@gmail.com <br/>
                 (04) 392-3232</p>
               </div>
+              
               <div className='shelter-contact-box'>
                 <h3>Mailing address</h3>
                 <p>HUHA – Helping You Help Animals Trust<br/>

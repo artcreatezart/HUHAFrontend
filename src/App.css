@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  z-index: 0; 
+}
+
 /* VARIABLES START -----------------*/
 :root {
   --primary-color: #5FB1BF;
@@ -119,7 +124,7 @@ button a {
 .two-column-grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 5rem;
+  grid-column-gap: 3rem;
   grid-row-gap: 3rem;
 }
 
@@ -149,6 +154,7 @@ button a {
   align-items: center;
   background-position: center;
   background-size: cover;
+  z-index: 10;
 }
 
 
@@ -159,8 +165,12 @@ button a {
 /* SubNav css  */
 .subnav-container {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-content: space-between;
+  text-align: center;
+  row-gap: 3rem;
+  column-gap: 3rem;
   padding: 2rem 3rem;
   box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3); 
   -webkit-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
@@ -207,7 +217,6 @@ nav .navbar-links button{
 .nav-logo img {
   height: 40px;
 }
-/* Navbar Css Ends*/
 
 .navbar-links li, .subnav-container  {
   list-style: none;
@@ -262,6 +271,38 @@ nav .navbar-links button{
   width: 100%; 
 }
 
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  top: 24px;
+  right: 35px;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+
+.bar1.toggle {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.bar2.toggle {
+  opacity: 0;
+}
+
+.bar3.toggle {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Header Section Css Starts */
 
 /* Home header */
@@ -285,10 +326,12 @@ nav .navbar-links button{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   grid-auto-rows: auto; 
+  row-gap: 2rem;
   justify-content: center;
   align-items: center;
   position: absolute;
   bottom: -8rem;
+  z-index: 10;
   padding: 3rem;
   place-items: center;
 }
@@ -448,11 +491,11 @@ nav .navbar-links button{
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  color: white;
+  color: var(--primary-color);
 }
 
 .campaign-title {
-  color: white;
+  color: var(--primary-color);
   text-transform: uppercase;
   width: 50%;
 }
@@ -553,6 +596,11 @@ nav .navbar-links button{
   height: 80%;
   position: relative;
   color: #F7F8FF;
+  overflow: auto;
+}
+
+.modal h3 {
+  margin-bottom: 2rem;
 }
 
 .close-modal-button {
@@ -577,7 +625,7 @@ nav .navbar-links button{
 
 .trustee-modal-img {
   width: 30%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
 }
 
@@ -593,13 +641,13 @@ nav .navbar-links button{
   padding: 2rem;
   border-radius: 8px;
   width: 80%;
-  max-height: 80vh;  /* Adjust this based on your desired max height for the modal */
+  max-height: 80vh; 
   position: relative;
   overflow: hidden; 
 }
 
 .support-animal-grid-container {
-  overflow-y: auto;  /* Allow vertical scrolling when content exceeds the available height */
+  overflow-y: auto;  
   padding-right: 10px;
 }
 
@@ -709,6 +757,7 @@ nav .navbar-links button{
   width: 70%;
 
 }
+
 .impact-stories-card h3{
   font-size: 2rem;
   font-weight: var(--subheader-font-weight);
@@ -929,6 +978,10 @@ nav .navbar-links button{
   width: 100%;
 }
 
+.right-two-buttons-bottom-disaster-container a button {
+  width: 100%;
+}
+
 
 /* bequest section */
 .top-bequest-container {
@@ -1127,6 +1180,7 @@ nav .navbar-links button{
 .plus-button, .minus-button {
   width: 20%;
 }
+
 .remove-button {
   width: 50%;
 }
@@ -1196,15 +1250,17 @@ nav .navbar-links button{
   text-align: center;
 }
 
-.send-message-button {
+.send-message-button-container {
+  width: 100%;
+  grid-column: span 2;
+  text-align: center;
+}
+
+.send-message-button{
   width: 100%;
   grid-column: span 2;
 }
 
-.send-message-button {
-  width: 100%;
-  text-align: center;
-}
 .form-header {
   width: 100%;
   grid-column: span 2;
@@ -1494,7 +1550,7 @@ nav .navbar-links button{
 
 .payment-method-img-1 {
   width: 100%;
-  height: 100%;
+  height: 100px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1554,6 +1610,7 @@ footer {
   -webkit-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
   -moz-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
   color: #F7F8FF;
+  margin-top: 2rem;
 }
 
 footer .footer-contact {
@@ -1562,3 +1619,508 @@ footer .footer-contact {
 
 /* Footer Css Ends*/
 
+
+/* MEDIA QUERIES */
+
+/* FOR MOBILE MENU ----------------------- */ 
+@media (max-width: 1400px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-200%);
+    overflow-y: auto;
+    gap: 0;
+    z-index: 9999;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  .navbar-links li a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .navbar-links li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9000;
+
+  }
+  
+  .navbar-links.menu-open-background {
+    background-color: var(--customize-section-color); 
+    padding: 30rem 0 10rem 0;
+  }
+
+  .menu-open .menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+  
+}
+
+/* FOR TABLET CSS -----------------------  */
+@media (max-width: 1200px) {
+  /* Global states */
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  p, ul {
+    font-size: 0.8rem;
+  }
+
+  /* HOME TABLET CSS */
+  .home-header-section h1 {
+    padding-left: 3rem;
+  }
+  
+  .home-header-core-values-container {
+    top: 60%;
+  }
+
+  .four-column-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* HOME ABOUT CSS */
+  .trustee-img {
+    max-height: 500px; 
+  }
+
+  .process-steps-adopt-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  } 
+
+  /* trustee */
+  .trustee-modal {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .trustee-modal img {
+    margin-top: 5rem;
+    width: 100%;
+    height: 50%;
+  }
+
+}
+ 
+ /* FOR HOME CORE VALUES SECTION -----------------------*/
+@media (max-width: 1000px) {
+  .home-header-section {
+    margin-bottom: 14em;
+  }
+
+}
+
+
+/* MOBILE CSS -----------------------*/
+@media (max-width: 900px) {
+  /* Global Mobile states */
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 0.9rem;
+  }
+
+  p, ul {
+    line-height: 25px;
+    letter-spacing: 0.3px;
+    font-family: var(--body-font-family);
+    font-size: 0.8rem;
+  }
+
+  .four-column-grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .two-column-grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  footer .footer-contact {
+    text-align: left;
+  }
+
+  button {
+    padding: 1rem 3rem;
+  }
+
+  .paw-point-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .home-card-img {
+    height: 300px;
+  }
+
+
+  /* modal forms mobile css */
+  .modal-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* home Mobile states */
+  .home-header-section {
+    margin-bottom: 18rem;
+  }
+
+  .campaign-card {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .left-img-campaign-description {
+    width: 100%;
+  }
+
+  .right-text-campaign-description {
+    width: 100%;
+  }
+
+  .huha-description {
+    flex-direction: column-reverse;
+  }
+
+  .right-img-huha-description {
+    width: 100%;
+    height: 200px;
+  }
+
+  .left-text-huha-description {
+    width: 100%;
+  }
+
+  /* About mobile css */
+  .purpose-about-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .purpose-img-left-container {
+    width: 100%;
+    height: 250px;
+  }
+
+  .purpose-text-right-container {
+    width: 100%;
+  }
+
+  .history-about-section {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .left-descript-history-container, .right-points-history-container {
+    width: 100%;
+  }
+
+  .right-points-history-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .trustee-img {
+    max-height: 600px; 
+    border-radius: 3px;
+  }
+
+  /* our impact mobile css */
+  .impact-about-container {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  .impact-img-left-container {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .impact-text-right-container {
+    width: 100%;
+  }
+
+  .impact-stories-container h4 {
+    width: 100%;
+  }
+
+  /* Support mobile css */
+  .top-volunteering-section {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  .top-img-volunteering-container {
+    width: 100%;
+    height: 200px;
+  }
+
+  .top-descript-volunteering-container {
+    width: 100%;
+  }
+
+  .middle-volunteering-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .middle-points-volunteering-container {
+    width: 100%;
+  }
+
+  .middle-descript-volunteering-container {
+    width: 100%;
+  }
+
+  .fundraise-section {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .left-descript-fundraise-container {
+    width: 100%;
+  }
+
+  .right-img-fundraise-container {
+    width: 100%;
+    height: 200px;
+  }
+
+  .support-animal-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .left-descript-support-animal, .right-button-support-animal {
+    width: 100%;
+  }
+
+  .help-support-intro, .information-middle-rehome-container, .information-bottom-disaster-container, .top-bequest-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .left-help-support-intro, .right-help-support-intro, .left-middle-rehome-container, .right-middle-rehome-container, .left-bottom-disaster-container, .right-bottom-disaster-container, .top-left-bequest-container, .top-right-bequest-container{
+    width: 100%;
+  }
+
+  .right-middle-rehome-container {
+    margin-left: 2rem;
+  }
+
+  .middle-left-bequest-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Shop Mobile css */
+  .shop-shops-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-buttons-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .category-buttons-list button{
+    width: 100%;
+  }
+
+  .cart-item-buttons button {
+    padding: 0.7rem 0;
+  }
+
+
+  .product-card h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+
+  .product-card p {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  /* Contact Mobile CSS */
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-inforamtion-container, .donate-goods-contact-container {
+    width: 100%;
+  }
+
+  .shelter-contact-groups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .shelter-contact-info p {
+    margin-bottom: 1rem;
+  }
+
+  /* Adopt mobile css */
+  .process-adopt-info  {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .process-adopt-info h3 {
+    width: 100%;
+  }
+
+  .requirements-adopt-section {
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .process-steps-adopt-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+
+  .requirments-adopt-info {
+    width: 80%;
+  }
+
+  .requirments-adopt-grid {
+    gap: 2rem;
+  }
+
+  /* single animal Mobile CSS */
+
+  .animal-post-container {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  .left-animal-container {
+    width: 100%;
+  }
+
+  .apply-adopt-button {
+    width: 100%;
+  }
+
+  .right-animal-container {
+    width: 100%;
+  }
+
+  /* Donate mobile css */
+  .donate-info-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .donate-descript-info-container, .donate-payment-info-container {
+    width: 100%;
+  }
+
+  .donate-method-img {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+  }
+
+  .left-info-donate-bequest-container {
+    width: 80%;
+  }
+
+  .fees-adopt-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .fees-adopt-info-comtainer {
+    width: 100%;
+  }
+
+  .adopt-fees-img-grid {
+    width: 100%;
+    height: 500px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+}
+
+@media (max-width: 700px) {
+  .home-header-section {
+    margin-bottom: 28rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-header-section {
+    margin-bottom: 50rem;
+  }
+
+  .home-header-core-value {
+    width: 100%;
+  }
+
+  .home-header-core-values-container {
+    top: 70%;
+  }
+
+}

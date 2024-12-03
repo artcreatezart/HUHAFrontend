@@ -8,7 +8,18 @@ const baseURL = import.meta.env.VITE_WP_BASEURL
 
 const Navbar = () => {
     const {cart} = useContext(CartContext);
-    const [logoURL, setLogoURL] = useState('')
+    const [isOpen, setIsOpen] = useState(false);
+    const [logoURL, setLogoURL] = useState('');
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen); 
+        document.body.style.overflow = isOpen ? 'auto': 'hidden';
+    }
+
+    const closeMenu = () => {
+        setIsOpen(false);
+        document.body.style.overflow = 'auto';
+    }
 
     useEffect(() => {
         const fetchNavLogo = async () => {
@@ -32,15 +43,34 @@ const Navbar = () => {
     
     // Navbar Content Starts f
     <header>
-        <nav className='navbar customize-section-color'>
-            <NavLink to='/' className='nav-logo'>
+        <nav className={`navbar customize-section-color ${isOpen ? 'menu-open' : ''}`}>
+            <NavLink to='/' onClick={closeMenu} className='nav-logo'>
+                
                 <img src={logoURL} alt='Website Logo'/>
             </NavLink>
 
-            <div className='navbar-links'>
+            <div className='menu-icon' onClick={toggleMenu}>
+                <div className={`bar bar1 ${isOpen ? 'toggle' : ''}`}></div>
+                <div className={`bar bar2 ${isOpen ? 'toggle' : ''}`}></div>
+                <div className={`bar bar3 ${isOpen ? 'toggle' : ''}`}></div>
+            </div>
+
+            <div className={`navbar-links ${isOpen ? 'active' : ''} ${isOpen ? 'menu-open-background' : ''}`}>
+
+                <li>
+                    <NavLink
+                        to='/'
+                        onClick={closeMenu}
+                        className={({isActive}) => (isActive ? 'active-link' : '')}
+                    >
+                        Home
+                    </NavLink>
+                </li>
+
                 <li>
                     <NavLink
                         to='/about'
+                        onClick={closeMenu}
                         className={({isActive}) => (isActive ? 'active-link' : '')}
                     >
                         About
@@ -50,6 +80,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/ourimpact'
+                        onClick={closeMenu}
                         className={({isActive}) => (isActive ? 'active-link' : '')}
                     >
                         Our Impact
@@ -59,6 +90,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/support'
+                        onClick={closeMenu}
                         className={({isActive}) => (isActive ? 'active-link' : '')}
                     >
                         Support
@@ -68,6 +100,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/shop'
+                        onClick={closeMenu}
                         className={({isActive}) => (isActive ? 'active-link' : '')}
                     >
                         Shop
@@ -77,6 +110,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/cart'
+                        onClick={closeMenu}
                         className={({isActive}) => (isActive ? 'active-link' : '')}
                     >
                         {cart.length === 0 ? (
@@ -97,6 +131,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/contact'
+                        onClick={closeMenu}
                         className={({isActive}) => (isActive ? 'active-link' : '')}
                     >
                         Contact
@@ -105,6 +140,7 @@ const Navbar = () => {
 
                 <NavLink 
                     to='/adopt'
+                    onClick={closeMenu}
                     >
                         <button className='primary-button'>
                             <FaPaw/>
@@ -117,6 +153,7 @@ const Navbar = () => {
                 
                 <NavLink 
                     to='/donate'
+                    onClick={closeMenu}
                     >
                         <button className='secondary-button'>
                             <FaDonate/>
@@ -129,6 +166,7 @@ const Navbar = () => {
             </div>
         
         </nav>
+        {isOpen && <div onClick={closeMenu}></div>}
     </header>
     // Navbar Content Ends
   )

@@ -30,7 +30,7 @@ const animalRequirementsModalContent = {
   return (
     <div className='requirements-adopt-section subnav-section-container'>
       <h2>Adoption Requirments For All Animals</h2>
-      <div className='four-column-grid-container'>
+      <div className='four-column-grid-container requirments-adopt-grid'>
 
         <div className='requirments-adopt-info'>
           <p><span className='bold-color-text'>Own your home or have written permission from the landlord to keep the type of pet(s) you're adopting - </span>ideally renters would have lived at the property for more than one year.</p>

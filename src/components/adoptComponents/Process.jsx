@@ -20,8 +20,7 @@ const Process = () => {
 
         <div className='step-process-adopt-card'>
           <h4><span className='bold-color-text'>3. </span> Property inspection</h4>
-          <p>We do property inspections for dogs, horses, chickens or rural animals. For cats, this will be a drive-by inspection.
-          </p>
+          <p>We do property inspections for dogs, horses, chickens or rural animals. For cats, this will be a drive-by inspection.</p>
         </div>
 
         <div className='step-process-adopt-card'>

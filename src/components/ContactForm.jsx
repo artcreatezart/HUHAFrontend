@@ -73,7 +73,7 @@ const ContactForm = () => {
       <form 
         onSubmit={ handleSubmit }
         method='POST'
-        className='form-containers two-column-grid-container'
+        className='form-containers two-column-grid-container contact-form'
       >
         <div>
           <div  className='input'>

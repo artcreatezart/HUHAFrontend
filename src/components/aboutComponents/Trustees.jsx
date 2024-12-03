@@ -10,7 +10,7 @@ const baseURL = import.meta.env.VITE_WP_API_BASEURL;
 const TrusteeModal = ({ title, content, image, closeTrusteeModal }) => (
   
   <div className='modal-overlay'>
-    <div className='modal trustee-modal'>
+    <div className='modal customize-section-color trustee-modal'>
       <img src={image} alt={title || 'Trustee'} className='trustee-modal-img'/>
       <div>
         <h3>{title}</h3>

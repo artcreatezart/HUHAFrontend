@@ -40,7 +40,7 @@ const About = () => {
         description='Get to know about HUHA!'
         url={window.location.href}
       />
-      <PageHeader title='Contact' image_url='/header-bg-imgs/about-img.webp'/>
+      <PageHeader title='About' image_url='/header-bg-imgs/about-img.webp'/>
       <AboutSubNav setShownComponent={setShownComponent} />
       <div className='content-container'>{displayComponent()}</div>
     </>
