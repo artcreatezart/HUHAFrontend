@@ -12,6 +12,12 @@ body {
   z-index: 0; 
 }
 
+#root {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 /* VARIABLES START -----------------*/
 :root {
   --primary-color: #5FB1BF;
