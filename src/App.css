@@ -2109,6 +2109,10 @@ footer .footer-contact {
     display: flex;
     flex-direction: column;
   }
+
+  .bequest-icon {
+    display: none;
+  }
   
 
 }
