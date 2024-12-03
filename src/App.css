@@ -1650,6 +1650,7 @@ footer .footer-contact {
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 1.5rem;
   }
 
   .navbar-links li {
@@ -1667,7 +1668,7 @@ footer .footer-contact {
   
   .navbar-links.menu-open-background {
     background-color: var(--customize-section-color); 
-    padding: 30rem 0 10rem 0;
+    padding: 20rem 0 10rem 0;
   }
 
   .menu-open .menu-icon {
@@ -1744,7 +1745,7 @@ footer .footer-contact {
 }
  
  /* FOR HOME CORE VALUES SECTION -----------------------*/
-@media (max-width: 1000px) {
+@media (max-width: 1030px) {
   .home-header-section {
     margin-bottom: 14em;
   }
