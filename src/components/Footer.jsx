@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const baseURL = import.meta.env.VITE_WP_BASEURL
 
@@ -38,6 +39,17 @@ const Footer = () => {
         <NavLink to='/' className='nav-logo'>
                 <img src={logoURL} alt='Website Logo'/>
         </NavLink>
+
+        <div className='footer-icon-container'>
+            <a href='https://www.instagram.com/helpingyouhelpanimals/?hl=en' className='footer-social-icon' target='_blank'>
+                <FaInstagram/>
+            </a>
+
+            <a href='https://www.facebook.com/HelpingYouHelpAnimals/'
+            className='footer-social-icon' target='_blank'>
+                <FaFacebook />
+            </a>
+        </div>
 
         <p className='footer-contact'>
             (04) 392-3232

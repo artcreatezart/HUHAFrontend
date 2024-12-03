@@ -1625,6 +1625,16 @@ footer .footer-contact {
   text-align: right;
 }
 
+.footer-social-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.footer-icon-container {
+  display: flex;
+  gap: 2rem;
+}
+
 /* Footer Css Ends*/
 
 
