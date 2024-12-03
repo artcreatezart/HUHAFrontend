@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
-import { useState } from "react";
-import { IoIosClose } from "react-icons/io";
+import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { IoIosClose } from 'react-icons/io';
 
 const SupportAnimal = () => {
   const [openSupportModal, setOpenSupportModal] = useState(null);

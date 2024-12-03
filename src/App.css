@@ -655,6 +655,7 @@ nav .navbar-links button{
 .support-animal-grid-container {
   overflow-y: auto;  
   padding-right: 10px;
+  align-items: flex-start;
 }
 
 /* history section */
@@ -897,6 +898,7 @@ nav .navbar-links button{
 
 .animal-card {
   color: #F7F8FF;
+
 }
 
 /* Help sectionå */
