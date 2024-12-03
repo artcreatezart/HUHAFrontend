@@ -1116,12 +1116,19 @@ nav .navbar-links button{
 
 .cart-item-buttons {
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  
 }
 
-.cart-item-buttons button{
-  padding: 0.5rem 1rem;
+.cart-item-buttons button {
+  padding: 0.2rem 0;
+}
+
+.plus-button, .minus-button {
+  width: 20%;
+}
+.remove-button {
+  width: 50%;
 }
 
 /* contact css */

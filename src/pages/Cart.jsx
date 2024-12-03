@@ -61,9 +61,9 @@ const Cart = () => {
                     <p>Quantity: {item.quantity}</p>
                     <p>${parseFloat(item.prices.price * item.quantity / 100).toFixed(2)}</p>
                     <div className='cart-item-buttons'>
-                      <button onClick={() => handleIncrement(item)} className='primary-button'>+</button>
-                      <button onClick={() => handleDecrement(item)} className='tertiary-button'>-</button>
-                      <button onClick={() => removeFromCart(item.id)} className='tertiary-button'>Remove</button>
+                      <button onClick={() => handleIncrement(item)} className='primary-button plus-button'>+</button>
+                      <button onClick={() => handleDecrement(item)} className='tertiary-button minus-button'>-</button>
+                      <button onClick={() => removeFromCart(item.id)} className='tertiary-button remove-button'>Remove</button>
                     </div>
                     
                   </div>
