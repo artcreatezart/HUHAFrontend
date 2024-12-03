@@ -10,7 +10,7 @@ const DisasterResponse = () => {
   const [disaster, setDisaster] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const disasterEndpoint = `${baseURL}/disasterstories?_embed`;
+  const disasterEndpoint = `${baseURL}/disasterstories?_embed&per_page=50`;
 
   useEffect(() => {
     axios.get(`${disasterEndpoint}`)

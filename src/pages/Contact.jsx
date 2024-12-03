@@ -18,7 +18,7 @@ const Contact = () => {
           <div className='shelter-contact-info'>
             <h2>Animal Shelters</h2>
             <p>Adopt an animal in need or volunteer to help us care for, socialise, exercise and improve the lives of our shelter animals until they find their forever homes.</p>
-            <div className='shelter-contact-groups two-column-grid'>
+            <div className='shelter-contact-groups two-column-grid-container'>
               <div className='shelter-contact-box'>
                 <h3>HUHA cat and small animal shelter and vet clinic</h3>
                 <p><span className='bold-text'>Public hours:</span> by appointment</p>
@@ -50,16 +50,16 @@ const Contact = () => {
           <h2>Donate Goods and Shop</h2>
           <p>Help support animals by donating your gently used clothing and household items to be sold in our op shops. Volunteer to work at our op shop so more of our profits can go directly to fund animal care. Shop our charity boutiques or online and delight in a selection of great finds. Together we save lives.</p>
           <div className='donate-good-button'>
-            <Link to='/shop'>
-              <button className='primary-button'>Shop</button>
+            <Link to='/shop' className='donate-button'>
+              <button className='primary-button donate-button'>Shop</button>
             </Link>
-            <Link to='/support'>
-              <button className='primary-button'>Volunteer</button>
+            <Link to='/support' className='donate-button'>
+              <button className='secondary-button donate-button'>Volunteer</button>
             </Link>
           </div>
         </div>
       </div>
-      <div className='customize-section-color'>
+      <div className='customize-section-color contact-form-container'>
         <h2>Contact Form</h2>
         <ContactForm/>
       </div>

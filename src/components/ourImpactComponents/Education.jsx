@@ -10,7 +10,7 @@ const Education = () => {
   const [education, setEducation] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const educationEndpoint = `${baseURL}/educationstories?_embed`;
+  const educationEndpoint = `${baseURL}/educationstories?_embed&per_page=50`;
 
   useEffect(() => {
     axios.get(`${educationEndpoint}`)

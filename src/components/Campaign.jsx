@@ -42,7 +42,7 @@ const Campaign = () => {
           </div>
           
           <div className='right-text-campaign-description'>
-            <h4 className='title'>{campaign.title.rendered}</h4>
+            <h2 className='campaign-title'>{campaign.title.rendered}</h2>
             <p dangerouslySetInnerHTML={{ __html: campaign.content.rendered }} />
             <a href={campaign.acf.link_to_campaign__petition} target='_blank'>
               <button className='secondary-button'>

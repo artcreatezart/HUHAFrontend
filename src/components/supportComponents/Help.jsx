@@ -63,7 +63,7 @@ const Help = () => {
               </a>
             </div>
             <a href='https://www.animalevac.nz/resources/' target='_blank'>
-                <button className='primary-button'>More planning resources</button>
+                <button className='primary-button plan-button'>More planning resources</button>
             </a>
           </div>
 

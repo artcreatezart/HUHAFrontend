@@ -2,6 +2,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 const baseURL = import.meta.env.VITE_WP_API_BASEURL;
+// icon imports
+import { FaMountain } from 'react-icons/fa';
+import { FaCat } from 'react-icons/fa';
+import { FaDog } from 'react-icons/fa';
+import { FaHorseHead } from 'react-icons/fa';
+import { PiRabbitFill } from 'react-icons/pi';
+
 
 // Animals Avaiable to adopt component found in adopt page within first section
 const AvailableAdoptAnimals = () => {
@@ -11,7 +18,7 @@ const AvailableAdoptAnimals = () => {
   const [species, setSpecies] = useState([]);
   const [selectedSpecies, setSelectedSpecies] = useState('');
 
-  const endpoint = `${baseURL}/animals?_embed`;
+  const endpoint = `${baseURL}/animals?_embed&per_page=50`;
   const speciesEndpoint = `${baseURL}/specie`;
 
   useEffect(() => {
@@ -53,14 +60,34 @@ const AvailableAdoptAnimals = () => {
 
   const AnimalList = ({animals}) => {
       const mappedAnimals = animals.map((animal, index) => {
+        const animalSpecies = species.find(specie => animal.class_list?.includes(`specie-${specie.slug}`));
+
           return (
               <div key={animal.slug + '-' + index} className='animals-available-container'>
                   <img src={getFeaturedImage(animal)} alt={animal.title.rendered + 'image'} className='animals-available-container-image'/>
                   <div className='animal-name-info'>
-                      <h4 className='title'>{animal.title.rendered}</h4>
+                      <h3 className='title'>{animal.title.rendered}</h3>
+                      <div className='animal-icon-container'>
+                      {animalSpecies?.slug === 'rural' && (
+                        <FaMountain style={{ display: 'flex' }} />
+                      )}
+                      {animalSpecies?.slug === 'horse' && (
+                        <FaHorseHead style={{ display: 'flex' }} />
+                      )}
+                      {animalSpecies?.slug === 'cat' && (
+                        <FaCat style={{ display: 'flex' }} />
+                      )}
+                      {animalSpecies?.slug === 'dog' && (
+                        <FaDog style={{ display: 'flex' }} />
+                      )}
+                      {animalSpecies?.slug === 'small' && (
+                        <PiRabbitFill style={{ display: 'flex' }} />
+                      )}
+                      </div>
                   </div>
                   
-                  <a href={`#/animals/${animal.id}`} className='primary-button'>Get To Know me</a>
+                  <a href={`#/animals/${animal.id}`} >
+                    <button className='primary-button'>Get To Know Me</button></a>
               </div>
 
               
@@ -76,10 +103,10 @@ const AvailableAdoptAnimals = () => {
 
   return (
     <>
-      <div className="animal-section-container">
-        <ul className="species-button-filter-container">
+      <div className='animal-section-container '>
+        <div className='species-button-filter-container category-buttons-list auto-grid-sub-nav'>
           <button
-            className="tertiary-button"
+            className='primary-button'
             onClick={() => setSelectedSpecies('')}
           >
             All Animals
@@ -87,14 +114,17 @@ const AvailableAdoptAnimals = () => {
           {species.map((specie) => (
             <button
               key={specie.id}
-              className="tertiary-button"
+              className='primary-button'
               onClick={() => setSelectedSpecies(specie.slug)}
             >
               {specie.name}
             </button>
           ))}
-        </ul>
-        {loading ? <p>Loading...</p> : <AnimalList animals={filteredAnimals} />}
+        </div>
+        <div className='four-column-grid-container'>
+          {loading ? <p>Loading...</p> : <AnimalList animals={filteredAnimals} />}
+        </div>
+       
       </div>
     </>
     

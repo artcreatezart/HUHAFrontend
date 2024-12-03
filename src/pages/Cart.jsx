@@ -4,8 +4,9 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
+
 const Cart = () => {
-  const { cart, updateCart, removeFromCart } = useContext(CartContext);
+  const { cart, updateCart, removeFromCart, clearCart } = useContext(CartContext);
 
   const handleIncrement = (item) => {
     updateCart(item.id, item.quantity + 1);
@@ -33,46 +34,57 @@ const Cart = () => {
       <PageHeader title='Cart' image_url='/header-bg-imgs/shop-cart-img.webp'/>
       
       {cart.length === 0 ? (
-            <div className='cart-container subnav-section-container'>
+        <div className='subnav-section-container'>
             There are currently no items in your cart.
-            <Link to={`/shop`}>
-                <button className='primary-button'>Go To Shop</button>
-            </Link>
-            <Link to={`/donate`}>
-                <button className='primary-button'>Donate</button>
-            </Link>
+            <div className='cart-no-items-buttons'>
+              <Link to={`/shop`}>
+                  <button className='primary-button cart-button'>Go To Shop</button>
+              </Link>
+              <Link to={`/donate`}>
+                  <button className='primary-button cart-button'>Donate</button>
+              </Link>
+            </div>
+            
           </div>
             
         ) : (
-          <>
-          <div>
-                {cart.map((item) => (
-                    <div key={item.id}>
-                        <h2>{item.name}</h2>
-                        <p>Quantity: {item.quantity}</p>
-                        <p>${parseFloat(item.prices.price * item.quantity / 100).toFixed(2)}</p>
-                        <button onClick={() => handleIncrement(item)}>+</button>
-                        <button onClick={() => handleDecrement(item)}>-</button>
-                        <button onClick={() => removeFromCart(item.id)}>Remove</button>
+          <div className='cart-container'>
+            <div className='four-column-grid-container'>
+              {cart.map((item) => (
+                  <div key={item.id} className='product-card'>
+                    <h3>{item.name}</h3>
+                    <img
+                      src={item.images[0]?.src || '/placeholder.jpg'}
+                      alt={item.name}
+                      className='product-card-img'
+                    />  
+                    <p>Quantity: {item.quantity}</p>
+                    <p>${parseFloat(item.prices.price * item.quantity / 100).toFixed(2)}</p>
+                    <div className='cart-item-buttons'>
+                      <button onClick={() => handleIncrement(item)} className='primary-button'>+</button>
+                      <button onClick={() => handleDecrement(item)} className='tertiary-button'>-</button>
+                      <button onClick={() => removeFromCart(item.id)} className='tertiary-button'>Remove</button>
                     </div>
-                ))}
-                      <div className='total-price'>
-                <h4>Total: ${totalPrice.toFixed(2)}</h4>
-                </div>
+                    
+                  </div>
+              ))}
             </div>
+
+            <h3 className='total-text'>Total: ${totalPrice.toFixed(2)}</h3>
 
             <div className='cart-buttons'>
               <Link to={`/shop`}>
-                <button className='tertiary-button'>Continue Shopping</button>
+                <button className='tertiary-button cart-button'>Continue Shopping</button>
               </Link>
-              <Link to={`/cartsuccess`}>
-                <button className='tertiary-button'>Purchase</button>
+              <Link to={`/cartsuccess`}
+                onClick={() => clearCart()}>
+                <button className='primary-button cart-button'>Purchase</button>
               </Link>
 
             </div>
 
 
-          </>
+          </div>
             
             
         )} 

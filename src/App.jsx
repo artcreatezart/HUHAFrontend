@@ -17,7 +17,6 @@ const App = () => {
 
   useEffect(() => {
     if (!isCustomizerLoaded) return;
-    console.log('Sectioned Color:', sectionedColor);
 
     document.documentElement.style.setProperty('--primary-btn-bg', primaryBtnColor);
     document.documentElement.style.setProperty('--secondary-btn-bg', secondaryBtnColor);
@@ -27,7 +26,7 @@ const App = () => {
     // Set background color and header font for body
     document.body.style.backgroundColor = `#${bgColor}`;
     document.querySelectorAll('h1, h2, h3').forEach(element => {
-      element.style.fontFamily = `'${headerFontFamily}', sans`;
+      element.style.fontFamily = `'${headerFontFamily}', sans-serif`;
     });
   
   }, [bgColor, headerFontFamily, sectionedColor, primaryBtnColor, secondaryBtnColor]);
@@ -36,7 +35,7 @@ const App = () => {
   return (
     <HashRouter>
       {isCustomizerLoaded ? (
-          <div style={{ backgroundColor: `#${bgColor}`, headerFontFamily: headerFontFamily}}>
+          <div style={{ backgroundColor: `#${bgColor}`, fontFamily: `${headerFontFamily}`}}>
             <Navbar style={{ backgroundColor: sectionedColor }}/>
             <Links style={{ backgroundColor: sectionedColor }}/>
             <Footer />

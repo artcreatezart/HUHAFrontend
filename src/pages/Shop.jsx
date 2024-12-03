@@ -83,7 +83,7 @@ const Shop = () => {
       />
       <PageHeader title='Shop' image_url='/header-bg-imgs/shop-cart-img.webp' />
       <div className='shop-container subnav-section-container'>
-        <div className='four-column-grid-container'>
+        <div className='four-column-grid-container shop-shops-container'>
           <div className='shop-info-container'>
             <div className='shop-card-info'>
               <h2>Online Shop</h2>
@@ -140,7 +140,7 @@ const Shop = () => {
         </div>
 
         {/* Category Buttons */}
-        <div className='product-category-buttons-list auto-grid-sub-nav'>
+        <div className='category-buttons-list auto-grid-sub-nav'>
           <button
             className='primary-button'
             onClick={() => setProductCategory('')}
@@ -164,7 +164,7 @@ const Shop = () => {
         </div>
 
         {/* Product Display */}
-        <div className='product-list'>
+        <div className='product-list four-column-grid-container'>
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div key={product.id} className='product-card'>
@@ -172,6 +172,7 @@ const Shop = () => {
                 <img
                   src={product.images[0]?.src || ''}
                   alt={product.name}
+                  className='product-card-img'
                 />
                 <p>Price:  ${(product.prices.price / 100).toFixed(2)}</p>
                 <button onClick={() => handleAddToCart(product)} className='primary-button'>Add to Cart</button>

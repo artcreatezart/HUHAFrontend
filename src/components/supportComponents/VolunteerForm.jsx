@@ -3,6 +3,7 @@ import axios from 'axios';
 // import icons
 import { TiTick } from 'react-icons/ti';
 import { TfiFaceSad } from 'react-icons/tfi';
+import { FaPaw } from 'react-icons/fa';
 
 const volunteerFormEndpoint = import.meta.env.VITE_APP_WP_API_VOLUNTEER_FORM_ENDPOINT;
 
@@ -12,7 +13,10 @@ const VolunteerForm = () => {
   
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [type, setType] = useState('');
+    const [number, setNumber] = useState('');
+    const [availablity, setAvailability] = useState('');
+    const [why, setWhy] = useState('');
   
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -21,7 +25,10 @@ const VolunteerForm = () => {
   
       volunteerForm.append('your-name', name);
       volunteerForm.append('your-email', email);
-      volunteerForm.append('your-message', message);
+      volunteerForm.append('your-number', number);
+      volunteerForm.append('your-availability', availablity);
+      volunteerForm.append('your-type', type);
+      volunteerForm.append('your-why', why);
       axios.post(volunteerFormEndpoint, volunteerForm, {
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -42,8 +49,10 @@ const VolunteerForm = () => {
       return (
         <>
           <div className='success-text'>
-            <h3><TiTick /> Thank You!</h3>
-            <p>We appreciate you contacting us! We will be in touch soon.</p>
+            <TiTick className='sucess-icon' />
+            <h3>FORM SENT!</h3> 
+            <p>Thank you for your application! <br/>
+            We will be in touch soon!</p>
           </div>
         </>
         
@@ -69,9 +78,9 @@ const VolunteerForm = () => {
       <form 
         onSubmit={ handleSubmit }
         method='POST'
-        className='form-containers'
+        className='form-containers two-column-grid-container modal-form-container'
       >
-        <h1>Volunteer Form</h1>
+        <h1 className='form-header'>Volunteer Form</h1>
         <div  className='input'>
           <label htmlFor='name'>Name:</label>
           <input
@@ -94,20 +103,62 @@ const VolunteerForm = () => {
         </div>
   
         <div className='input'>
-          <label htmlFor='message'>Message:</label>
+          <label htmlFor='availability'>Availability: (How many hours?)</label>
           <textarea 
-            name='message'
-            onChange={( event ) => setMessage( event.target.value )}
-            value={ message }
+            name='availability'
+            onChange={( event ) => setAvailability( event.target.value )}
+            value={availablity }
+            required
+          />
+        </div>
+
+        <div className='input'>
+          <label htmlFor='number'>Phone Number:</label>
+          <input 
+          type='tel'
+          name='number'
+          onChange={( event ) => setNumber(event.target.value)}
+          value={ number }
+          required />
+        </div>
+
+        <div className='input'>
+          <label htmlFor='type'>Type of Volunteering:</label>
+            <select 
+            name='type' 
+            id='type' 
+            onChange={(event) => setType(event.target.value)} 
+            value={type} 
+            required
+          >
+            <option value='' disabled> Select an option</option>
+            <option value='wellington cat/small animal shelter'>Wellington cat/small animal shelter</option>
+            <option value='wellington dog shelter'>Wellington dog shelter</option>
+            <option value='wellington horse shelter/option'>Wellington horse shelter/option</option>
+            <option value='op shop petone'>Op Shop Petone</option>
+            <option value='op shop carterton'>Op Shop Carerton</option>
+            <option value='op shop otaki'>Op Shop Otaki</option>
+            <option value='other wolunteer opportunities<'>Other Volunteer Opportunities</option>
+            
+          </select>
+        </div>
+
+        <div className='input'>
+          <label htmlFor='why'>Why do you want to volunteer:</label>
+          <textarea 
+            name='why'
+            onChange={( event ) => setWhy( event.target.value )}
+            value={ why }
             required
           />
         </div>
   
-        <div>
+        <div className='send-message-button'>
           <button
-            className='primary-button'
+            className='primary-button send-message-button'
             type='submit'
           >
+            <FaPaw/>
             Send Message
           </button>
         </div>

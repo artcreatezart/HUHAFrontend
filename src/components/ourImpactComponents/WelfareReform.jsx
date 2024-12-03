@@ -10,7 +10,7 @@ const WelfareReform = () => {
   const [welfare, setWelfare] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const welfareEndpoint = `${baseURL}/welfarestories?_embed`;
+  const welfareEndpoint = `${baseURL}/welfarestories?_embed&per_page=50`;
 
   useEffect(() => {
     axios.get(`${welfareEndpoint}`)

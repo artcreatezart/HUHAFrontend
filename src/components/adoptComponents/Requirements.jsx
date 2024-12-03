@@ -53,16 +53,16 @@ const animalRequirementsModalContent = {
       <div className='four-column-grid-container'>
 
         {/* Opens dgo Modal*/}
-        <button className='primary-button' onClick={() => setOpenAnimalRequirementsModal('dogs')}> Requirments for dogs</button>
+        <button className='primary-button requirement-button' onClick={() => setOpenAnimalRequirementsModal('dogs')}> Requirments for dogs</button>
 
         {/* Opens cat Modal*/}
-        <button className='primary-button' onClick={() => setOpenAnimalRequirementsModal('cats')}> Requirments for cats</button>
+        <button className='primary-button requirement-button' onClick={() => setOpenAnimalRequirementsModal('cats')}> Requirments for cats</button>
 
         {/* Opens rural animal Modal*/}
-        <button className='primary-button' onClick={() => setOpenAnimalRequirementsModal('ruralAnimals')}> Requirments for rural animals</button>
+        <button className='primary-button requirement-button' onClick={() => setOpenAnimalRequirementsModal('ruralAnimals')}> Requirments for rural animals</button>
         
         {/* Opens chicken Modal*/}
-        <button className='primary-button' onClick={() => setOpenAnimalRequirementsModal('chickens')}> Requirments for chickens</button>
+        <button className='primary-button requirement-button' onClick={() => setOpenAnimalRequirementsModal('chickens')}> Requirments for chickens</button>
 
       </div>
 
@@ -81,7 +81,7 @@ const animalRequirementsModalContent = {
 
 const AnimalRequirementsModal = ({ title, pointOne, pointTwo, closeAnimalRequirementsModal }) => (
   <div className='modal-overlay'>
-    <div className='modal'>
+    <div className='modal customize-section-color requirment-modal'>
       <h3>{title}</h3>
       <div className='single-point-history'>
           <FaPaw className='paw-point-icon'/>

@@ -81,7 +81,7 @@ const WhatWeDo = () => {
 // What we do modal display when opened
 const WhatModal = ({ title, content, closeWhatModal }) => (
   <div className='modal-overlay'>
-    <div className='modal'>
+    <div className='modal customize-section-color'>
       <h3>{title}</h3>
       <p>{content}</p>
       {/* X Close modal button */}

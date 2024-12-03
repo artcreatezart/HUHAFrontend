@@ -8,10 +8,7 @@ import wooCommerceApi from '../woocommerceApi';
 
 
 const Donate = () => {
-  const [categories, setCategories] = useState([]);
-  const [shownProductCategory, setProductCategory] = useState(''); 
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]); 
   const {addToCart} = useContext(CartContext);
   const [showAddToCart, setShowAddToCart] = useState(false);
 
@@ -20,7 +17,7 @@ const Donate = () => {
       try {
         const productResponse = await wooCommerceApi.get('/products');
   
-        // Filter products belonging to the "Donations" category
+        // Filter products belonging to the 'Donations' category
         const donationProducts = productResponse.data.filter(product =>
           product.categories.some(
             category => category.name.toLowerCase() === 'donations'
@@ -60,28 +57,29 @@ const Donate = () => {
         </div>
         <div className='donate-payment-info-container'>
           <h3>Other Payment Methods</h3>
-          <div className='four-column-grid-container'>
-            <div className='payment-method-img'/>
-            <div className='payment-method-img'/>
-            <div className='payment-method-img'/>
-            <div className='payment-method-img'/>
+          <div className='four-column-grid-container donate-method-img'>
+            <div className='payment-method-img-1'/>
+            <div className='payment-method-img-2'/>
+            <div className='payment-method-img-3'/>
+            <div className='payment-method-img-4'/>
           </div>
           <Link to='/contact'>
             <button className='primary-button'>Contact For Details</button>
           </Link>
         </div>
       </div>
-      <div className="product-list">
+      <div className='product-list four-column-grid-container'>
         {products.length > 0 ? (
           products.map(product => (
-            <div key={product.id} className="product-card">
+            <div key={product.id} className='product-card'>
               <h3>{product.name}</h3>
               <img
                 src={product.images[0]?.src || '/placeholder.jpg'}
                 alt={product.name}
+                className='product-card-img'
               />
               <p>Price:  ${(product.prices.price / 100).toFixed(2)}</p>
-              <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+              <button onClick={() => handleAddToCart(product)} className='primary-button'>Add to Cart</button>
             </div>
           ))
         ) : (
@@ -90,14 +88,14 @@ const Donate = () => {
       </div>
 
       <div className='donate-bequest-container'>
-        <div className='left-ingo-donate-bequest-container'>
+        <div className='left-info-donate-bequest-container'>
           <h3>Make a Bequest</h3>
           <p>When you choose to remember HUHA in your will - you are making a significant contribution to the future sustainability of HUHA and our shared commitment to defend all animals in need for generations to come. As HUHA has grown, so have the calls for our help. A bequest can help ensure that we will be financially prepared to meet the future needs of animals across New Zealand.</p>
           <Link to='/support' state={{shownComponent: 'Bequest'}}>
             <button className='primary-button'>Find Out More</button>
           </Link>
         </div>
-        <FaFingerprint />
+        <FaFingerprint className='bequest-icon'/>
       </div>
     </div>
   </>

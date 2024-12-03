@@ -9,7 +9,7 @@ import { IoIosClose } from 'react-icons/io';
 const VolunteerModal = ({ closeVolunteerModal }) => (
 
   <div className='modal-overlay'>
-    <div className='modal volunteer-modal'>
+    <div className='modal volunteer-modal customize-section-color'>
       <VolunteerForm/>
       
       {/* X button close modal */}
@@ -91,7 +91,7 @@ const Volunteering = () => {
           <h4>Volunteer at our charity op shops</h4>
           <p>Our charity boutiques are based in Carterton, Otaki and Petone and are essential in raising vital funds to support animals. Were always grateful for help with weekly or fortnightly volunteer shifts</p>
           <ul>
-            <li>Wellington cat/small animal shelte</li>
+            <li>Otaki Op Shop</li>
             <li>Caterton Op Shop</li>
             <li>Petone Op Shop</li>
           </ul>

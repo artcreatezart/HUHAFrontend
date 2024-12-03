@@ -15,7 +15,7 @@ const baseURL = import.meta.env.VITE_WP_API_BASEURL;
 const Home = () => {
   const [sponsors, setSponsors] = useState(null);
   const [loading, setLoading] = useState(true);
-  const sponsorsEndpoint = `${baseURL}/sponsors?_embed&per_page=30`;
+  const sponsorsEndpoint = `${baseURL}/sponsors?_embed&per_page=50`;
 
   useEffect(() => {
     const fetchData = async () => {
