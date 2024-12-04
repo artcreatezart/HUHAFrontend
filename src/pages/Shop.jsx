@@ -12,7 +12,6 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]); 
   const {addToCart} = useContext(CartContext);
-  const [showAddToCart, setShowAddToCart] = useState(false);
 
   // Fetch Categories and Products 
   useEffect(() => {
@@ -182,11 +181,6 @@ const Shop = () => {
             <p>No products available for this category.</p>
           )}
         </div>
-        {showAddToCart && (
-          <div className='added-to-cart-prompt'>
-              Item added to cart!
-          </div>
-        )}
       </div>
     </>
   );
