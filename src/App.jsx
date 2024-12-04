@@ -35,7 +35,7 @@ const App = () => {
   return (
     <HashRouter>
       {isCustomizerLoaded ? (
-          <div style={{ backgroundColor: `#${bgColor}`, fontFamily: `${headerFontFamily}`}} >
+          <div style={{ backgroundColor: `#${bgColor}`, fontFamily: `${headerFontFamily}`}} id='rootContainer'>
             <Navbar style={{ backgroundColor: sectionedColor }}/>
             <Links style={{ backgroundColor: sectionedColor }}/>
             <Footer />

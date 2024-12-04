@@ -12,7 +12,7 @@ body {
   z-index: 0; 
 }
 
-#root {
+#rootContainer {
   min-height: 100dvh;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -1780,6 +1780,10 @@ footer .footer-contact {
     place-items: start;
   }
 
+  .donate-method-img {
+    gap: 2rem;
+  }
+
 }
  
  /* FOR HOME CORE VALUES SECTION -----------------------*/
@@ -2163,6 +2167,16 @@ footer .footer-contact {
     display: flex;
     flex-direction: column;
   }
+
+  .cart-buttons, .cart-no-items-buttons {
+    flex-direction: column;
+  }
+  .cart-buttons {
+    gap: 2rem;
+  }
+  .category-buttons-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 500px) {
@@ -2198,6 +2212,10 @@ footer .footer-contact {
 
   .contact-form {
     width: 80%;
+  }
+
+  .donate-method-img {
+    gap: 1rem;
   }
 
 
