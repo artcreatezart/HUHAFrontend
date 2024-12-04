@@ -61,11 +61,6 @@ const Shop = () => {
 
   const handleAddToCart = (product) =>{
     addToCart(product); 
-    setShowAddToCart(true);
-
-    setTimeout(() => {
-        setShowAddToCart(false);
-    }, 3000);
    };  
 
   // Removes 'donations' category from buttons
