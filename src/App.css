@@ -2172,7 +2172,28 @@ footer .footer-contact {
   .home-header-core-values-container {
     top: 70%;
   }
+
+  .donate-good-button {
+    flex-direction: column;
+  }
   
+  .shelter-contact-groups {
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-form-container {
+    padding: 2rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-form {
+    width: 80%;
+  }
 
 
 }
