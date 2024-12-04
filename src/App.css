@@ -149,6 +149,7 @@ button a {
   grid-column-gap: 5rem;
   grid-row-gap: 3rem;
   place-items: center;
+  align-items: flex-start;
 }
 
 /* Page Header */
@@ -191,6 +192,8 @@ button a {
 .paw-point-icon {
   font-size: 2rem;
   color: var(--secondary-color);
+  display: flex;
+  flex-shrink: 0
 }
 
 /* GLOBAL CSS END -----------------*/
@@ -397,7 +400,7 @@ nav .navbar-links button{
 
 .right-img-huha-description {
   width: 50%;
-  height: auto;
+  height: 250px;
   background-image: url(/other-imgs/home-imgs/info-header-img.webp);
   background-position: center;
   background-size: cover;
@@ -430,7 +433,7 @@ nav .navbar-links button{
 
 .home-card-img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   background-position: center;
   background-size: cover;
   border-radius: 3px;
@@ -481,14 +484,14 @@ nav .navbar-links button{
   gap: 5rem;
 }
 .left-img-campaign-description {
-  width: 50%;
+  max-width: 700px;
   height: auto;
 }
 
 .left-img-campaign-description img {
   width: 100%;
-  height: auto;
-  background-size: cover;
+  height: 100%;
+  object-fit: cover;
 
 }
 
@@ -556,10 +559,11 @@ nav .navbar-links button{
   height: auto;
   background-position: center;
   background-size: cover;
+  min-height: 350px;
 }
 
 .purpose-text-right-container{
-  width: 50%;
+  width: 40%;
 }
 
 /* What we do Section */
@@ -631,7 +635,7 @@ nav .navbar-links button{
 
 .trustee-modal-img {
   width: 30%;
-  height: 80%;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -685,7 +689,7 @@ nav .navbar-links button{
 
 .single-point-history {
   display: flex;
-  align-items: center; 
+  align-items: flex-start; 
   justify-content: flex-start; 
   gap: 1rem;
 }
@@ -711,7 +715,7 @@ nav .navbar-links button{
 }
 
 .trustee-img {
-  max-height: 250px; 
+  max-height: 500px; 
   overflow: hidden; 
   border-radius: 3px;
 }
@@ -723,7 +727,7 @@ nav .navbar-links button{
   object-position: center; 
 }
 
-/* Our IMpact page css */
+/* Our Impact page css */
 .impact-about-container {
   display: flex;
   width: 100%;
@@ -791,7 +795,7 @@ nav .navbar-links button{
 .top-img-volunteering-container {
   background-image: url(/header-bg-imgs/support-volunteer-img.webp);
   width: 50%;
-  height: auto;
+  height: 300px;
   background-position: center;
   background-size: cover;
   border-radius: 3px;
@@ -823,11 +827,18 @@ nav .navbar-links button{
 }
 
 .bottom-volunteer-option-container {
-  text-align: center;
+  text-align: left;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bottom-volunteer-option-container ul{
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 /* Fundraise sectionå */
@@ -880,7 +891,6 @@ nav .navbar-links button{
   margin-top: 2rem;
 }
 
-/* ???????? */
 .top-support-card {
   width: 100%;
 }
@@ -888,7 +898,6 @@ nav .navbar-links button{
 .top-support-card button {
   width: 100%;
 }
-/* ???????? */
 
 .animal-card img {
   width: 100%;
@@ -898,6 +907,9 @@ nav .navbar-links button{
 
 .animal-card {
   color: #F7F8FF;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
 }
 
@@ -1031,7 +1043,7 @@ nav .navbar-links button{
 }
 
 .bequest-option-container {
-  text-align: center;
+  text-align: left;
   align-self: flex-start;
   display: flex;
   flex-direction: column;
@@ -1065,7 +1077,7 @@ nav .navbar-links button{
 
 /* Shop css */
 .shop-card-info{
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -1098,7 +1110,6 @@ nav .navbar-links button{
   -moz-box-shadow: 10px 4px 18px -8px rgba(23,23,23,0.3);
   padding: 1rem;
   background-color: white;
-
 }
 
 .product-card h3{
@@ -1107,9 +1118,9 @@ nav .navbar-links button{
 
 .product-card-img {
   width: 100%;
-  height: auto;
-  background-position: center;
-  background-size: cover;
+  height: 100%;
+  object-fit: cover;
+ object-position: center;
   border-radius: 3px;
 }
 
@@ -1760,6 +1771,10 @@ footer .footer-contact {
     height: 50%;
   }
 
+  .shop-shops-container {
+    place-items: start;
+  }
+
 }
  
  /* FOR HOME CORE VALUES SECTION -----------------------*/
@@ -1820,8 +1835,8 @@ footer .footer-contact {
   }
 
   .paw-point-icon {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
   }
 
   .home-card-img {
@@ -1856,11 +1871,12 @@ footer .footer-contact {
 
   .huha-description {
     flex-direction: column-reverse;
+    gap: 3rem;
   }
 
   .right-img-huha-description {
     width: 100%;
-    height: 200px;
+    height: 300px;
   }
 
   .left-text-huha-description {
@@ -1992,6 +2008,7 @@ footer .footer-contact {
   .shop-shops-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    place-items: left;
   }
 
   .category-buttons-list {
@@ -2120,6 +2137,10 @@ footer .footer-contact {
     flex-direction: column;
   }
 
+  .left-info-donate-bequest-container {
+    width: 100%;
+  }
+
   .bequest-icon {
     display: none;
   }
@@ -2131,11 +2152,16 @@ footer .footer-contact {
   .home-header-section {
     margin-bottom: 28rem;
   }
+
+  .shop-shops-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 500px) {
   .home-header-section {
-    margin-bottom: 50rem;
+    margin-bottom: 55rem;
   }
 
   .home-header-core-value {
@@ -2145,5 +2171,7 @@ footer .footer-contact {
   .home-header-core-values-container {
     top: 70%;
   }
+  
+
 
 }

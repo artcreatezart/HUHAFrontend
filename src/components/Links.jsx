@@ -1,4 +1,5 @@
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, useLocation} from 'react-router-dom'
+import { useEffect } from 'react';
 
 // Import Pages
 import Home from '../pages/Home'
@@ -14,22 +15,37 @@ import CartSuccess from '../pages/CartSuccess'
 import SingleAnimal from '../pages/SingleAnimal'
 import AvailableAdoptAnimals from './adoptComponents/AvailableAdoptAnimals'
 
+// Auto scroll top when on new page
+const ScrollPageTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null; 
+};
+
 const Links = () => {
   return (
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/ourimpact' element={ <OurImpact/> }/>
-      <Route path='/support' element={ <Support/> }/>
-      <Route path='/adopt' element={<Adopt/>}/>
-      <Route path='/cart' element={<Cart/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='/shop' element={<Shop />} />
-      <Route path='/donate' element={<Donate/>} />
-      <Route path='/cartsuccess' element={<CartSuccess/>}/>
-      <Route path='/animals' element={<AvailableAdoptAnimals/>}/>
-      <Route path='/animals/:id' element={<SingleAnimal/>}/>
-    </Routes>
+    <>
+      <ScrollPageTop />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/ourimpact' element={ <OurImpact/> }/>
+        <Route path='/support' element={ <Support/> }/>
+        <Route path='/adopt' element={<Adopt/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/shop' element={<Shop />} />
+        <Route path='/donate' element={<Donate/>} />
+        <Route path='/cartsuccess' element={<CartSuccess/>}/>
+        <Route path='/animals' element={<AvailableAdoptAnimals/>}/>
+        <Route path='/animals/:id' element={<SingleAnimal/>}/>
+      </Routes>
+    </>
+    
   )
 }
 
