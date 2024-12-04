@@ -2218,5 +2218,11 @@ footer .footer-contact {
     gap: 1rem;
   }
 
+  .top-right-animal, .middle-right-animal {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
 
 }
