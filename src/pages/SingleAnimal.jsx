@@ -82,9 +82,7 @@ const SingleAnimal = () => {
               setOpenAdoptModal({})}
             >Apply To Adopt</button>
             <h3>Any Queries</h3>
-            <p>Please call us 04 3923232 or emaildogs@huha.nz  <br/>
-            She is based in Otaki <br/>
-            (Clover is back at the shelter)</p>
+            <p>Please call us 04 3923232 or enquire.huha@gmail.com  </p>
 
           </div>
           <div className='right-animal-container'>

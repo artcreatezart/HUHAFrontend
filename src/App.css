@@ -1619,6 +1619,11 @@ nav .navbar-links button{
   width: 10%;
 }
 
+
+.shelter-contact-groups {
+  gap: 1rem;
+}
+
 /* Footer Css Starts*/
 footer {
   display: flex;

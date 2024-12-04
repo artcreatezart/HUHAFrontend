@@ -21,15 +21,15 @@ const Contact = () => {
             <div className='shelter-contact-groups two-column-grid-container'>
               <div className='shelter-contact-box'>
                 <h3>HUHA cat and small animal shelter and vet clinic</h3>
-                <p><span className='bold-text'>Public hours:</span> by appointment</p>
-                <p>Catteam.huha@gmail.com <br/>
+                <p><span className='bold-text'>Public hours:</span> by appointment
+                Catteam.huha@gmail.com <br/><br/>
                   04 392 3232</p>
               </div>
 
               <div className='shelter-contact-box'>
                 <h3>HUHA Otaki dog shelter</h3>
-                <p><span className='bold-text'>Public hours:</span>  Wed to Sun from 12 - 3pm or by appointment.</p>
-                <p>Otaki.huha@gmail.com<br/>
+                <p><span className='bold-text'>Public hours:</span>  Wed to Sun from 12 - 3pm or by appointment.
+                Otaki.huha@gmail.com<br/><br/>
                     04 392 3232</p>
               </div>
 
@@ -42,7 +42,7 @@ const Contact = () => {
               
               <div className='shelter-contact-box'>
                 <h3>Mailing address</h3>
-                <p>HUHA – Helping You Help Animals Trust<br/>
+                <p>HUHA – Helping You Help Animals Trust<br/><br/>
                     Charitable Trust #CC47396<br/>
                     Postal Address: CMB 26 Kaitoke, Upper Hutt, 5018</p>
               </div>
