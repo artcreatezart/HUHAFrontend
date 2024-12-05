@@ -40,6 +40,8 @@ a {
   text-decoration: none;
 } 
 
+
+
 .primary-button {
   background-color: var(--primary-btn-bg);
   color: white;
@@ -69,6 +71,9 @@ a {
   background-color: #5fb1bf7d;
 }
 
+.error-text {
+  color: #ffffff;
+}
 h1 {
   font-size: 4.5rem;
   text-shadow: 1px 2px 5px #171717;
