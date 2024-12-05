@@ -35,11 +35,9 @@ const VolunteerForm = () => {
         }
       })
       .then(( response ) => {
-        console.log( response );
         setSubmitted( true );
       }) 
       .catch(( error ) => {
-        console.log( error );
         setError( true );
       });
     }
